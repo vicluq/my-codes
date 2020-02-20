@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+
+int contador;
+int resposta = 1; // indica o valor da resposta no primeiro ciclo
+
+printf("Digite uma numero pra obter o fatorial:");
+scanf("%i", &contador);
+
+for( ; contador > 1 ; --contador) {
+
+resposta = resposta * contador; // a cada ciclo ele cria uma resposta novo que irá multiplicar o próximo valor do contador de acordo com a expressão 
+                                // criando uma nova resposta
+
+printf("%i\n", resposta);
+
+}
+
+/* resposta = 1 ??
+explicando...
+
+
+resposta = resposta * fatorial
+
+primeiro laço de repetição
+resposta = 1 * 5  = 5 (resposta assume valor 5)
+
+segundo laço de repetição 
+resposta = 5 * 4 = 20
+
+
+
+terceiro laço de repetição 
+resposta = 20 * 3 = 60
+
+quarto laço de repetição
+resposta = 60 * 2 = 120
+
+
+quinto e ultimo laço de repetição  de DECREMENTO (fatorial--) (fatorial = fatorial - 1)
+resposta = 120 * 1 = 120 */
+
+
+
+return 0;
+
+}
+
