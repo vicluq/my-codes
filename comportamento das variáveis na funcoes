@@ -9,20 +9,20 @@ void valorfuncao (int x, int vetor[]);
 valorfuncao (y, vetor); // como ja deixou claro que o segundo valor é um veto na declaração da função, ñ se coloca mais '[]'. 
 
 printf("O valor y na main eh: %i\n", y);
-printf("O valor vetor[1] na main eh: %i\n", vetor[0]);
+printf("O valor vetor[0] na main eh: %i\n", vetor[0]);
 
     return 0;
 }
-//para alterar x na main por meio da funcao, teria que usar o return
+
 void valorfuncao (int x, int vetor[]) {
 
     x = x + 2; // x = y (n posso pôr y pois é apenas acessível na função 'main', a não ser q eu coloque 'int y' na funcao)
-    vetor[1] = vetor[0] + 10; // Aqui eu atribui um valor para vetor[1] pois antes não havia, por isso mudou na main
+    vetor[0] = 1; // a funçao recebe o endereço do vetor original, e não uma cópia e por isso muda
     
     printf("O valor y na funcao eh: %i\n", x);
-    printf("O valor vetor[1] na funcao eh: %i\n", vetor[1]);
+    printf("O valor vetor[0] na funcao eh: %i\n", vetor[0]);
     
 }
 
-/* conclusao: o valor na main o valor valor não é alterado. a funcao apenas cria uma copia da int/float/char na funcao e se alterar
-o valor na funcao, so mudará nela */ 
+/* conclusao: o valor na main o  valor não é alterado. a funcao apenas cria uma copia da int/float/char na funcao e se alterar
+o valor na funcao, so mudará nela. No caso de vetores, o valor muda, pois o endereço do vetor/matriz é enviado e não uma cópia */ 
