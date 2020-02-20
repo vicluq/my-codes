@@ -1,4 +1,4 @@
-#i#include <stdio.h>
+#include <stdio.h>
 
 int main () {
 
@@ -13,14 +13,15 @@ printf("O valor vetor[1] na main eh: %i\n", vetor[0]);
 
     return 0;
 }
-
+//para alterar x na main por meio da funcao, teria que usar o return
 void valorfuncao (int x, int vetor[]) {
 
-    x = x + 2; // x = y (n posso por y pois é apenas acessível na função 'main')
+    x = x + 2; // x = y (n posso pôr y pois é apenas acessível na função 'main', a não ser q eu coloque 'int y' na funcao)
     vetor[1] = vetor[0] + 10; // Aqui eu atribui um valor para vetor[1] pois antes não havia, por isso mudou na main
     
     printf("O valor y na funcao eh: %i\n", x);
     printf("O valor vetor[1] na funcao eh: %i\n", vetor[1]);
+    
 }
 
 /* conclusao: o valor na main o valor valor não é alterado. a funcao apenas cria uma copia da int/float/char na funcao e se alterar
