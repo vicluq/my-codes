@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main () {
+
+char word [15]; 
+// o compilador saberá quantos caracteres são. 
+// Sempre um a mais por cona do nulo '\0'
+
+int tamanhostring (char string[]);
+
+printf("Digite uma palavra!\n");
+scanf("%s", word); 
+
+int nmrocarac = tamanhostring (word); //ao retornar um valor da função, deve-se criar outra variável na main para igualar ao valor retornado.
+printf("%i", nmrocarac);             // Não se deixa a chamada função solta com o valor retornado,
+
+
+return 0;
+}
+
+int tamanhostring (char string[]) {
+
+int i = 0;
+
+while(string[i] != '\0') {
+    ++i;    //para usar o caractere em operações, etc, sempre se usa ente ' '
+
+}
+
+/* com o for não saiu o número de caracteres, 
+pois o for mostra todas as vezes q o ciclo roda, o while, não. 
+While só se interessa pelo resultado final que é quantas vezes o ciclo rodou!
+nesse caso, quantas vezes o resultado final das somas de 'i' */
+return i;
+}
