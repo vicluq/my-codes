@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+
+int main () {
+
+char nome[50];
+    printf("DIGITE SEU NOME: \n");
+    
+    gets(nome); //ao invés de usar o scanf, usa o gets ou fgets para pegar o nome e contabilizar cada palavra como um conjunto de UMA string só
+    
+    printf("O NOME DIGITADO FOI %s\n", nome);
+    
+
+
+return 0;
+}
