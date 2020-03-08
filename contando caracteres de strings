@@ -12,8 +12,8 @@ printf("Digite uma palavra!\n");
 scanf("%s", word); 
 
 int nmrocarac = tamanhostring (word); //ao retornar um valor da função, deve-se criar outra variável na main para igualar ao valor retornado.
-printf("%i", nmrocarac);             // Não se deixa a chamada função solta com o valor retornado,
-
+printf("%i", nmrocarac);             // Não se deixa a chamada função solta com o valor retornado.
+                                    // Ela precisa jogar o valor retornado em alguma variável
 
 return 0;
 }
