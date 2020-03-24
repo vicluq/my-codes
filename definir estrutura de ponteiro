@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main () {
+
+struct notas {                 // 1- obviamente você define a estrutura
+    float nota1;               // 2- depois você declara  a estrutura 
+    float nota2;               // 3- depois você cria uma estrutura ponteiro, ou seja um ponteiro do tipo estrutura e manda a estrutura ponteiro apontar p/ estrutra 'primeiro'
+    float nota3;               // 4 - após acessar o endereço da estrutura 'primeiro' por meio da ponteiro, voce pode alterar os valores dos itens da primeiro
+                               // (*ponteiro).nota1 == ponteiro->nota1, ou seja, a estrutura ponteiro acessou o endereço da struct primeiro e depois aponta para seus itens alterando-os 
+};
+
+struct notas primeiro; 
+    primeiro.nota1;
+    primeiro.nota2;
+    primeiro.nota3;
+
+struct notas *ponteiro;
+ponteiro = &primeiro;
+ponteiro->nota1 = 9.6; // (*ponteiro).nota1 -- alterar e mexer com os valores das variáveis das estruturas
+ponteiro->nota2 = 9.2;
+ponteiro->nota3 = 8.8;
+
+printf("a  nota1 foi: %.2f, a 2 foi: %.2f, a 3 foi: %.2f", primeiro.nota1, primeiro.nota2, primeiro.nota3);
+printf("\no endereço da estrutura eh: %i", ponteiro);
+
+return 0;
+
+}
