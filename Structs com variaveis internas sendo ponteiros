@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main () {
+
+float nota1 = 7.8, nota2 = 9.4, nota3 = 6.3;
+
+struct notas {                 
+    float *Pnota1;               
+    float *Pnota2;               
+    float *Pnota3;            
+};
+
+struct notas semestre1; //aqui eu declarei uma estrutura do tipo notas que contém variáveis de ponteiros
+
+semestre1.Pnota1 = &nota1;
+semestre1.Pnota2 = &nota2; *semestre1.Pnota2 = 9.8; // aqui eu alterei o valor da variável nota2 após apontar para ela
+
+
+printf("%i\n", semestre1.Pnota1); //para imprimir o endereço tem que por %i pois eh um valor inteiro sem o *
+printf("%.2f\n", *semestre1.Pnota1); // para imprimir o valor (por o * pois qnd se quer valor usa ele) tem que por %f pois eh um valor decimal
+
+printf("%.2f\n", nota2); 
+printf("%.2f", *semestre1.Pnota2);
+
+
+return 0;
+}
+
+
