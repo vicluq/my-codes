@@ -1,0 +1,165 @@
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+#include <stdlib.h>
+
+struct elements
+{
+    char *name;
+    int Atomic_Number;
+    char *family;
+    float mass;
+
+} ;
+
+void addElements (FILE *fileStruct, struct elements x[], int *qntd);
+void checarNome (struct elements x[], char nameInput[]);
+void checarNumero_Atomico (struct elements y[], int atomicNumber);
+
+
+
+int main()
+{
+
+   int qntd = 1;
+  struct elements *elements = (struct elements *) malloc(sizeof(struct elements) * qntd) ;
+  elements[0].name = "Hidrogenio";
+  elements[0].family = "1A";
+  elements[0].mass = 1;
+  elements[0].Atomic_Number = 1;
+ 
+
+   //Menu will be on main
+    int busca = 890;
+
+    while (busca)
+    {
+        printf("-------Selecione sua forma de busca----------\n\n");
+        printf("-------1: Busca por nome do elemento-------\n\n");
+        printf("-------2: Busca por numero atomico----------\n\n");
+        printf("-------3: Adicionar um elemento novo--------\n\n");
+       // scanf("%i", &busca);
+        
+       
+       char key;
+       key = getch(); //o programa fica esperando apertar uma tecla que terá seu valor armazenado na variável
+           
+           if ((int) key == 49) { //aqui converto a tecla em um valor inteiro e se esse inteiro corresponder com o código, envia para a opção e limpa o output!!
+                busca = 1;system("cls"); }
+           
+           else if ((int)key == 50) {
+                busca = 2;system("cls"); }
+            
+            else if ((int)key == 51) {
+                busca = 3;system("cls"); }
+        
+        
+        switch (busca)
+        {
+        case 1: ;
+           
+            char Nome[15];
+            printf("Digite o nome do elemento:\n ");
+            scanf("%s", &Nome);
+            
+             system("cls");
+            checarNome (elements, Nome);
+           
+            
+            getch();
+            system("cls");
+            break;
+
+        case 2: ;
+            
+            printf("Digite o num atomico do elemento: ");
+            int numAtomico;
+            scanf("%i", &numAtomico);
+            
+            system("cls");
+            checarNumero_Atomico(elements, numAtomico);
+            
+            
+            getch();
+            system("cls");
+            break;
+
+         case 3: ;
+            
+            FILE *fileData = fopen("periodicTable.txt", "wb");
+            addElements (fileData, elements, &qntd);
+            
+            getch();
+            system("cls");
+            break;
+        }
+    }
+
+
+    return 0;
+}
+
+
+void checarNome(struct elements x[], char nameInput[])
+{
+
+    int n = 0;
+
+    for (; n < 50; ++n)
+    {
+
+        if (strcmp(x[n].name, nameInput) == 0)
+        {
+            break;
+        }
+    }
+
+            printf("Nome: %s\n", x[n].name);
+            printf("Numero Atomico: %i\n", x[n].Atomic_Number);
+            printf("Familia: %s\n", x[n].family);
+            printf("Massa: %.2f\n", x[n].mass);
+}
+
+
+void checarNumero_Atomico(struct elements y[], int atomicNumber)
+{
+
+    int m = 0;
+
+    for (; m < 50; ++m)
+    {
+
+        if (y[m].Atomic_Number == atomicNumber)
+        {
+            break;
+        }
+    }
+
+            printf("Nome: %s\n", y[m].name);
+            printf("Numero Atomico: %i\n", y[m].Atomic_Number);
+            printf("Familia: %s\n", y[m].family);
+            printf("Massa: %.2f\n", y[m].mass);
+}
+
+void addElements (FILE *fileStruct, struct elements x[], int *qntd) {
+    
+    ++*qntd;
+    
+    realloc(x, sizeof(struct elements) *(*qntd));
+    
+    printf("Digite o nome do Elemento: ");
+    scanf("%s", &x[(*qntd)-1].name);
+
+    printf("Digite o Num Atomico do Elemento: ");
+    scanf("%i", &x[(*qntd)-1].Atomic_Number);
+
+    printf("Digite s massa do Elemento: ");
+    scanf("%f", &x[(*qntd)-1].mass);
+    
+    printf("Digite a familia do Elemento: ");
+    scanf("%s", &x[(*qntd)-1].family);
+
+
+    fwrite(x, sizeof(struct elements), (*qntd), fileStruct);
+    
+}
