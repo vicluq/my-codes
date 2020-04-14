@@ -1,0 +1,19 @@
+1) Funções Construtoras com o operador 'new'
+
+    A função construtora será aquela que servirá de molde para criar um objeto e o operador 'new' realizará a instância.
+    
+    Por meio do 'this', que se refere ao objeto que o engloba/pertence (global, módulo, objeto criado), eu posso manipular os atributos após
+a  criação do objeto, ou seja, esses atributos se tornam 'públicos ' para manipular depois da instância. Se eu não utilizar o 'this', os atributos
+faram paarte do objeto, porém eu não posso mexer neles, a não ser que eu altere no esqueleto da função ou troque um parâmetro.
+
+2) Função Factory
+
+        Essa função retorna um objeto, sendo assim, deve ser chamada dentro de uma variável a qual receberá o objeto, tornando-se um e recebedo os
+    atributos e métodos enviados pela função. Assim como no método anterior, eu posso add parâmetros que daram valor a atributos e etc.
+    OBS: se eu criar um método eu devo usar o this para dizer que me refiro ao atributo x do objeto, senão o valor ficará fixado em algo ou sairá undefined,
+    ou seja, não será personalizado para o objeto
+
+3) Criação literal
+
+    Criar um objeto literalmente usando as chaves, acessando e adicionando manualmente os atributos e métodos por meio da notação ponto
+    ou por meio da notação array com a string que representa/representará o identificador

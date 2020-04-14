@@ -1,0 +1,74 @@
+/* web style css*/
+
+body {
+    background-image: url(https://www.elsetge.cat/myimg/f/147-1474091_glowing-power-button.png);
+    image-orientation: from-image;
+    background-position-x: -6cm;
+    background-position-y: -5cm;
+    
+}
+
+#Title1 {
+    color: yellow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: rgba(45, 113, 201, 0.692);
+    border-style: groove;
+    border-radius: 13px;
+}
+
+.operTitles {
+    color: yellow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+   
+}
+
+.infogive {
+    color: rgb(15, 248, 46);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.results {
+    color: darkturquoise;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.inputs {
+    border-radius: 12px;
+    border-color: darkturquoise;
+    border-style: solid;
+    border-width: 4px;
+    font-family: monospace;
+    background-color: rgba(153, 0, 255, 0.644);
+    color: white;
+}
+
+.buttonop {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-color: darkturquoise;
+    border-style: solid;
+    border-radius: 11px;
+    border-width: 4px;
+    background-color: yellow;
+    color: rgb(0, 110, 255);
+}
+
+#timing {
+    color: yellow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px; 
+    background-color: rgba(0, 110, 255, 0.781);
+    border-radius: 12px;
+}
+
+#time {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-color: darkturquoise;
+    border-style: solid;
+    border-radius: 11px;
+    border-width: 4px;
+    background-color: yellow;
+    color: rgb(0, 110, 255);
+    
+}

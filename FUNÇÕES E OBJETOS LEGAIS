@@ -1,0 +1,18 @@
+----------------------
+- setInterval(função, tempoMilisegundos)
+
+Essa função perfmite que eu execute a 'função' a cada 'x milisegundos'. Para interromper, basta parar o CodeRun!!
+
+utilidades: passagem do tempo, mudança de idade, etc!! fazer um cronometro
+
+----------------------
+- Função Date: essa função é útil quando instanciada "new Date"
+
+Ela exibe a data e o momento em que foi instanciada na execução do programa
+ela contém vários métodos quando instanciada: getFullYear, getDate (dia), getMonth, getTime (tempo decorrido desde 01/01/1970)
+
+----------------------
+- setTimeOut(função, tempoMilisegundos)
+
+----------------------
+Método Object.freeze() --> impedir a alteração e adição dos atributos. Literalmente congela o objeto (útil por questões de segurnça)
