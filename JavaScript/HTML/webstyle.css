@@ -58,8 +58,7 @@ body {
     color: yellow;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 16px; 
-    background-color: rgba(0, 110, 255, 0.781);
-    border-radius: 12px;
+
 }
 
 #time {

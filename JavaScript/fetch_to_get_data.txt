@@ -1,0 +1,15 @@
+Getting API data with fetch... (supports promisses)
+
+O que a fetch faz: pega um URL e seus conteúdos e devolve uma promisse, e posteriomente uma resposta após conseguir ou não os dados
+É um processo assíncrono, ou seja, o código roda mas a espera pela promessa e quando ela chegar ela tras uma resposta
+essa resposta con´tem os dados se deu certo, ou não, caso tenha dado errado
+
+1) call fetch(); function --> fornece uma promessa --> erro ou sucesso
+
+2)usa o .then para obter uma resposta e executar uma função em caso de sucesso
+
+3) como você não tem certeza se dará certo, usa o catch para tratar o erro!
+
+ou seja, cria um caso para se der erro e um para se der certo --> then e catch são callbacks, sendo assim, recebem funções como parametro para executar algo com a resposta
+
+4) caso dê certo, converte os elementos ou completa o dado e cria os elementos com esses dados
