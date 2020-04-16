@@ -36,3 +36,9 @@ dadosVictoria.pop(); //tirou numeroCartão
 delete dadosVictoria [6]; //tirou CPF e deixou um item vazio
 //DELETE SRVE PARA QUALQUER COISA QUE ARMAZENE ELEMENTOS (OBJETOS)
 console.log(dadosVictoria);
+
+//slice() --> recebe dois argumentos índices (onde começo, onde termino). Ela retorna um array que possui apenas os elementos do índice 'início' até 'fim -1'
+
+const array5 = [5, 8, 23, 'ola'];
+
+console.log(array5.slice(0, 3)) //lembrar que é intervalo aberto no ultimo!!

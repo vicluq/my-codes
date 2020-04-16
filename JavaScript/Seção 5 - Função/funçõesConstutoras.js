@@ -19,7 +19,7 @@ console.log(notebook);
 //Instanciando --> usa-se 'new.' A função que origina o objeto se chama costrutor, pois ela eh a 'blueprint' desse objeto que eh orriginado dela
 //'Método Construtor'
 
-//o this torma o método/variável/aatributo público, ou seja, posso visualizar  e acessar ffora da função, ao instanciá-la!!  Se não usa o this, o elemento integra o objt mas fica privado e não pode ser alterado
+//o this torma o método/variável/aatributo público, ou seja, posso visualizar  e acessar no objeto, ao instanciá-la!!  Se não usa o this, o elemento integra o objt mas fica privado e não pode ser alterado
 function celular() {
 
     this.nome = "iPhone X"; //a notação ponto com o this permite que, quando eu instacie (torne um objeto), esses elementos se tornem atributos do objeto

@@ -11,10 +11,11 @@ let arrayOfPrices = [3400, 2340, 1750.99, 445.60];
 var arrayOfNew = [];
 function applyTaxes (price) { //callback --> vai ser chama novamente pela forEach
     price  = (price + price*0.135).toFixed(2);
-   console.log(`Price + taxes of the ${index + 1} element = ${price}`);
+    console.log(`Price + taxes of the ${index + 1} element = ${price}`);
     arrayOfNew.push(price); //ai add esse novo preço em outro array
 }
 
+//Essa função de Array envia como parametro para a callback cada elemento do array 
 arrayOfPrices.forEach(applyTaxes); //eu poderia retornar e criar um array com os preços novos
 // arrayOfPrices.forEach(function (a) {console.log(a)}) //ela pode receber uma função direta
 console.log(arrayOfNew);
