@@ -22,6 +22,7 @@ body {
     width: 20cm;
     height: 3cm;
     left: 380px;
+    top: -0.35cm;
    
 }
 
@@ -140,7 +141,7 @@ body {
 
 .caseTitle6 {
     position: relative;
-    color: brown;
+    color: rgb(165, 42, 42);
     font: bold 18px helvetica;
     left: 0.7cm;
     top: 0.2cm;
@@ -151,12 +152,17 @@ body {
     color: rgb(15, 15, 15);
     left: 3cm;
     font: bold 18px helvetica;
+    
+}
+
+#Chart {
+    background-color: rgba(250, 235, 215, 0.85);
+    border-radius: 10px;
 }
     </style>
 
     <meta http-equiv=”Content-Type” content=”text/html; charset=iso-8859-1″>
-    <link rel="stylesheet" type="text/css" href="coronaStyle.css" />
-
+    
     <!-- 
      <img src="https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/br.png" alt="" id="brFlag"
         height="45" width="55">  -->
@@ -171,10 +177,14 @@ body {
 
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"> // importing the Charts libr files </script>
 </head>
 
 <body>
+    <div id="chartDiv">
+    <canvas id="Chart" height="3cm" width="15cm" ></canvas>
+    <script src="script.js"> //js coding </script>
+    </div>
     <script>
 
         window.onload = function givetime() {
