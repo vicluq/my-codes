@@ -20,7 +20,7 @@ arrayOfPrices.forEach(applyTaxes); //eu poderia retornar e criar um array com os
 // arrayOfPrices.forEach(function (a) {console.log(a)}) //ela pode receber uma função direta
 console.log(arrayOfNew);
 
-//o evento nesse caso seria cada elemtno do array --> cada evento(pode ser um elemento, uma resposta, um cadastro novo que imprime sucesso ou não, etc) que encontra, chama novamente a função --- loop for poderia fazer isso --> o princípio das callbacks se baseiam em loops
+//o evento nesse caso seria cada elemetno do array --> cada evento(pode ser um elemento, uma resposta, um cadastro novo que imprime sucesso ou não, etc) que encontra, chama novamente a função --- loop for poderia fazer isso --> o princípio das callbacks se baseiam em loops
 //para que usar: deixa o código menor, mais limpo e mais eficiente
 
 

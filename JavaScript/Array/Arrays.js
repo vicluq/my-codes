@@ -25,12 +25,12 @@ console.log(!!dadosVictoria[4]); // esse elemento é vazio (false), pois qnd add
 console.log(dadosVictoria.length);
 console.log("dadosVictoria".length);
 
-//Função array'.push(elementos)' permite adicionar elementos no array: push elements into 'array'
+//Função array'.push(elementos)' permite ADICIONAR ELEMENTOS NO ARRAY: push elements into 'array'
 
 dadosVictoria.push("123.706.498-04", 23479572941410); //cpf, numeroCartão
 console.log(dadosVictoria);
 
-//Função '.pop()' e 'delete' --> retiram valores do array: a pop tira o só o último e a delete você pode escolher o índice do elemento que quer tirar
+//Função '.pop()' e 'delete' --> RETIRAR VALOR DO ARRAY: a POP TIRA O ÚLTIMO SÓ e a delete você pode escolher o índice do elemento que quer tirar
 
 dadosVictoria.pop(); //tirou numeroCartão
 delete dadosVictoria [6]; //tirou CPF e deixou um item vazio
@@ -42,3 +42,5 @@ console.log(dadosVictoria);
 const array5 = [5, 8, 23, 'ola'];
 
 console.log(array5.slice(0, 3)) //lembrar que é intervalo aberto no ultimo!!
+
+console.log(typeof array5) //arrays literais são objetos, mas que trabalham com os valores de forma indexada!
