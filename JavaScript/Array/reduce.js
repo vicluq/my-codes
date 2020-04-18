@@ -12,3 +12,4 @@
             por fim, eu devo retornar o valor do acumulador SEMPRE apos executar uma operação ou whatever com o elementoAtual
 
 */
+
