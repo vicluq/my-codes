@@ -1,0 +1,28 @@
+1) forEach:
+
+    -Apenas percorre o array e executa uma função (callback) para cada elemento dele
+    -Não retorna um novo array, não retorna nada, apenas executa a função
+    -O map é melhor pois ele já retorna o array novo, aqui eu teria q fazer manualmente!!
+
+2) Map:
+
+    -percorre o array, executando uma callback para cada elemento dele
+    -retorna um array novo com os valores novos retonados pela callback para cada elemento
+    -NÃO MUDA O ORIGINAL ARRAY!
+    -Posso encadear vários maps em que cada um utiliza o array resultante do anterior e no fim tem-se um array resultantede todos os maps
+
+3) Filter:
+
+    -forma de filtrar os elementos do array a partir de uma callback que retorna 'true' ou 'false'
+    -se for true: o eleme entra no retornado pela filter, se for false, não entra no array novo da filter
+    -percorre o array e 
+    -RETORNA UM NOVO com valores que deram true na callback!!
+    -UTIL PARA PERCORRER ATRIBUTOS DE OBJETOS QUE ESTÃO NO ARRAY E SELECIONAR DE ACORDO COM O FILTRO!!
+    -Posso encadear também!!
+
+4) Reduce: (o retorno e sempre passado para a proóxima callback como parâmetro == acumulador)
+
+    - uma forma de reduzir um array a um número, somando os elementos por exemplo
+    - Ela tem um acumulador que é o resultado da calback anterior que se acumula para a seguinte
+
+

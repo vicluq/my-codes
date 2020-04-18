@@ -1,4 +1,5 @@
 //Ele executa uma callback para cada elemento do array, porém precisa enviar esse novo valor para um outro array ou substituir, pois forEach não altera o array origi e não retorna nada
+//APENAS PERCORRE O O ARRAY
 //Essa função fornece para a callback como parâmetros o valor do elemento, seu índice e po array original completo nessa ordem, eu posso ignorar os que eu quiser, porém se quero usar o indice ou o array eu abrigatoriamente devo por o que vem antes!!
 
 const produtos = ['iPhone SE', 'Dell Inspiron', 'MacBook Air'];
