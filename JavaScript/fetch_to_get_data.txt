@@ -18,3 +18,7 @@ OBS: para usar o '.this' em cadeia, para que o outro this receba a promessa, tem
 os parametros dos this seguintes, são os retornos dos anteriores
 
 Uma ideia para poder recuperar os dados da API seria criar uma função e passar esses dados como parâmetros delas!!
+
+***** DEFININDO CONFIGURAÇÕES SE NECESSÁRIO --> objeto com as configs após o link da request em fetch
+HEADERS: As vezes precisamos add headers com informações sobre a api que estamos pedindo, por exemplo, se precisar de um token eu add no header
+Method: a forma como queremos a api --> extrair info é GET. tem POST, etc

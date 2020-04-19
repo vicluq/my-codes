@@ -44,3 +44,9 @@ Array.prototype.map2 = function (func) {
 } 
 
 console.log(array.map2(valor => valor*2))
+
+
+const array5 = [1, 3, 5]
+const obj = {nome: 'victoria'}
+console.log(array5.toString())
+console.log(obj.toString())

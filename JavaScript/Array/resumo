@@ -23,6 +23,15 @@
 4) Reduce: (o retorno e sempre passado para a proóxima callback como parâmetro == acumulador)
 
     - uma forma de reduzir um array a um número, somando os elementos por exemplo
-    - Ela tem um acumulador que é o resultado da calback anterior que se acumula para a seguinte
+    - Ela tem um acumulador que é o resultado da callback anterior que se acumula para a seguinte
+    - se eu não setar um valor inicial para o acumulador, ele começa com o [0] e percorre o array do índice [1]!
 
+
+IMPERATIVO VS. DECLARATIVO
+
+Imperativo: ele mostra o passo a passo e como é feito, sem muitos recursos que já fazem por você aquilo, porém o código é menos reaproveitado do que o declarativo.
+Declarativo: preocpa-se com o que deve ser feito e não o como, pois o passo a passo não e visto, pois usamos funções e elementos que fazem para nós
+Ou seja, imperativo mostra COMO VOCE FAZ, e o declarativo se preocpa com OQUE VOCE QUER, usando elementos que executam o processo por trás, sem precisar sujar o código com laços nao reutilizaveis e variáveis de controle!!
+
+O declarativo é possível reusar o código em outros contextos, por exemplo, fazer algo no ciclo for(para o caso específico) ou numa função(poderia ser reusada em outros casos)
 
