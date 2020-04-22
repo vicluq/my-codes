@@ -20,5 +20,30 @@
         serve para executar os aruivos da pasta do projeto (SE CERTIFICAR QUE ESTÁ NA PASTA DO PORJETO ONDE ESTÁ O PACKAGE.JSON) DE FORMA RÁPIDA
         **npm 'atribComando'**. Posso por também o nome de algum módulo executável pelo terminal que eu queira usar (nodemon, por ex) e ao lado o nome do arquivo que vai ser executado usando esse módulo. Posso NÃO por o nome do arq que quero e ele vai automáticamente atrás do arquivo princiapl setado no package.json
 
-- 
+        - OBS: se o comando que eu usei não for um comando padrão como 'start', 'test', eu devo por a palavra [run] antes do nome do comando
+
+
+# FrameWorks --> Estrutura para a aplicação (React, express, angular)
+
+    ## FrameWorks Back-end (express, por ex)
+
+    - Vão ajudar com a criação de servidores e bancos de dados (express, MongoDB)
+
+    ## FrameWorks Front-end (react, por ex)
+
+    - Ajudar no design e contato com o cliente
+
+
+# Padrão Middleware --> chain of responsability
+
+ - Uma sequencia de passos em que um passo chama o outro numa sequência. Não deve depender um passo doutro, mas eles são combinados para realizar algo (quem chama o outro passo é uma função).
+
+ - O importante eh eles serem passos independ, pois poderia ser reusado em outro contexto!
+
+ - PADRÃO DA WEB: request --> response --> next 
+
+ - COMO FAZER: criar as funções que são os passos (middlewares) e essas funções vão fazer algo em sequencia em determinado objetivo. Em seguida, criar a função que vai executar o objetivo, ativando os passos
+
+        Passa as middlewares (funções passos) como um array (usa o '...') e manda executar essas funções numa ordem usando o índex e funções recursivas, assim, ele vai abrir vários casos e vai resolvendo um passo por vez!! **ESTUDAR ESSE PADRÃO**
+
 

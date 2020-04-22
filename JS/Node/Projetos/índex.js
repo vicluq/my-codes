@@ -34,7 +34,7 @@ function getResponse (resp) {
     
     let chineseWomanSalary = sortArray2(chineseWoman.map(woman => woman.salario))
     
-
+    console.log(chineseWomanSalary)
 
     let lowestSalaryWoman = [];
 

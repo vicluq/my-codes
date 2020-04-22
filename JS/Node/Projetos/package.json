@@ -4,8 +4,7 @@
   "description": "search the list for the smallest chinese woman salary ",
   "main": "índex.js",
   "scripts": {
-    "test": "índex",
-    "try": "script"
+    "start": "nodemon índex.js"
   },
   "keywords": [
     "salary",
