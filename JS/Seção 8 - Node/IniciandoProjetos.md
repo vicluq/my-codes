@@ -1,11 +1,13 @@
-## Usando npm e package.json
+# Usando npm e package.json
 
 - O package.json é um arquivo que todos projetos e apps devem possuir. Serve para informar e descrever o projeto(autor, nome, módulos usados, etc)
     Para criar um usa-se: 'npm init' (npm inicializar projeto é o que significa) --> se eu por 'npm init -y' significa que ele dira yes para todas as opções
 
 - Uma parte importante do package.json é [dependencies] que diz o que foi usado (libraries/módulos/frameworks)
     
-    [1] posso add manualmente ou automáticamente quando instalar a dependencia basta por: **'npm i --save "nomeMódulo"'** (OBS: EU DEVO ESTAR NA PASTA DO MEU PROJETO PARA SALVAR NO PACKAGE DELE, CUIDADO)
+    [1] posso add manualmente as dependências ou automáticamente quando instalar a dependencia basta por: **'npm i --save "nomeMódulo"'** (OBS: EU DEVO ESTAR NA PASTA DO MEU PROJETO PARA SALVAR NO PACKAGE DELE, CUIDADO)
+
+                        OBS: Devdependencies != dependencies --> as dev são aquelas que não usamos diretamente na construção, mas sim, para realizar testes e tal tipo o nodemon
     
     [2] *versões das dependencias*: o '^' indica que ele só atualiza o módulo x em versões novas do minor updates (major.minor.fixes). O '~' só permite que o npm atualize os fixes. Isso e importante pois atualizações grandes podem mudar recursos existentes e bugar seu projeto!! Se não tiver flag, ele não muda nenhuma versão
     
@@ -40,10 +42,21 @@
 
  - O importante eh eles serem passos independ, pois poderia ser reusado em outro contexto!
 
- - PADRÃO DA WEB: request --> response --> next 
+ - PADRÃO DA WEB: *request* --> *response* --> *next* (next seria a função a ser executada depois)
+
+ **EXEMPLO: Se eu configuro dois+ gets que atendem ao mesmo path ("/...") e eu não adiciono o next() para ele passar de um get(função middleware) para outro, quando eu fizer a request, apenas os dados do primeiro serão exibidos no path da request**
 
  - COMO FAZER: criar as funções que são os passos (middlewares) e essas funções vão fazer algo em sequencia em determinado objetivo. Em seguida, criar a função que vai executar o objetivo, ativando os passos
 
         Passa as middlewares (funções passos) como um array (usa o '...') e manda executar essas funções numa ordem usando o índex e funções recursivas, assim, ele vai abrir vários casos e vai resolvendo um passo por vez!! **ESTUDAR ESSE PADRÃO**
 
+## Trabalhando com Redes (servers)
+
+- Abrir uma porta, pois permite a entrada de requisições ao server e outros PC's. A Porta comunica o que vai ser aberto ao conectar nela!!
+
+- **Conecta o servidor à rede**
+
+- No caso do server, quando eu abro uma porta para meu server, quem vai atender e ouvir as req a essa porta é meu arquivo .js!! Por isso colocamos listen que diz que é para ouvir nessa porta X
+
+- *OBS: SEPARAR O ARQUIVO DA BASE DE DADOS COM O DO SERVIDOR E CONECTAR POR IMPORTAÇÃO DE MÓDULOS E FUNÇÕES QUE IRÃO FORNECER OS DADOS, POIS ASSIM, NÃO POLUI O CÓDIGO*
 

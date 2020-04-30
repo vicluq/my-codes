@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #mainTitle {
+            text-align: center;
+            border-bottom: dashed;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding: 10px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Website</title>
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <header><h1 id="mainTitle">Welcome to training</h1></header>
+    <nav>
+        <a exrLinks href="./Fundamentos/textTags.html">Text Tags</a> |
+        <a exrLinks href="./Fundamentos/Listas.html">Listas</a> |
+        <a exrLinks href="./Fundamentos/links.html">Links</a> |
+    </nav>
+    <section id="linksContent"></section>
+
+<script>
+    const links = document.querySelectorAll('[exrLinks]'); //array of obj representigng elem
+
+    links.forEach (link => { //forEach para adicionar esse evento para cada link e se href
+        link.onclick = function () { //add o atributo onclick
+            event.preventDefault() //não levará a gnt pra fora desse index
+
+            fetch(link.href) //pega o link do objeto que representa esse query!
+            .then((res) => res.text())
+            .then((html) => {
+                document.getElementById('linksContent').innerHTML = html //innerHTML rederiza como html
+            })
+            .catch(err => console.log('err :>> ', err))
+        }
+    })
+
+</script>
+</body>
+</html>

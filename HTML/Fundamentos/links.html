@@ -1,0 +1,42 @@
+<h1 style="text-align: center; background-color: coral;">Trabalhando com Links</h1>
+
+<!--! ADICIONANDO LINKS TAG <a href = "links here"> -->
+
+<h2>Abrindo links em nova tab e na mesma tab</h2>
+
+<a href="https://www.instagram.com/?hl=pt-br">Esse abre na mesma taba -> target _self</a> <br>
+<a href="https://www.instagram.com/?hl=pt-br" target="_blank">Esse em taba externa -> com target _blank</a>
+<!--  
+alvo para blank page ou self page
+OBS: LEMBRAS DE COLOCAR O PROTOCOLO HTTP PARA URLS QUE NÃO INTEGRAM O SITE SE NÃO ELE DA ERRO
+-->
+
+<!-- 
+? se atentar às '/' usadas nos hrefs para referenciar outras págs. /x.html vai procurar um elem na pasta raiz da app (a que está sendo servida pelo server)
+? mesmo eu estando dentro de várias pastas!
+! '../x.html' procura algo na pasta acima
+-->
+
+<!--! Link que aponta para email e telefone -> você põe um email de contato e quando o user clicar abre o provedor de email dele para mandar email pra vc -->
+<hr>
+<h2>Links de EMAIL -> "mailto: email"</h2>
+
+<a href="mailto: devendra.tewari@gmail.com">Get in contact with us!</a><br>
+<a href="tel:+5581993465919">Call Me Baby!</a>
+
+<hr>
+
+
+<!--! ÂNCORAS -> navegação intrapág. Ou seja, navegar para uma parte da página ao clicar em algum link com o (id do elemento) -->
+
+<a href="#antiBozo">Vá para a notícia antibozo!</a>
+
+<!-- eu vou cirar um link no inicio da pag em que, ao clicar nele, vá para essa noticia na pág 
+OBS: LINKS COM ANCORAS NÃO SÃO ENVIADOS PRO BACK END. NÃO É POSSÍVEL!!
+-->
+
+<div id="antiBozo" style="position: relative; top: 1000px;">
+<h1>Isso aqui é uma notícia que fica lá embaixo</h1>
+<h3>Manifestações esquentam no beco da facada em casa forte</h3>
+<p>&nbsp;&nbsp;&nbsp;Segundo moradores de Casa Forte, todos são <q>FORA BIROLIRO!</q></p>
+</div>

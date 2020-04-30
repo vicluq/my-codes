@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Lista</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; background-color: darkcyan; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        Challenge lista - Abrir árvore</h1>
+
+    <ul>
+        <li><a class="folders" href="#">BackEnd</a>
+            <ul>
+                <li>
+                    <a class="folders" href="#">app</a>
+                    <ul>
+                        <li>server.js</li>
+                        <li>db.js</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="folders" href="#">FrontEnd</a>
+            <ul>
+                <li><a class="folders" href="#">public</a>
+                    <ul>
+                        <li>app.js</li>
+                        <li>app.css</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        const folders = document.querySelectorAll('.folders');
+        console.log(folders)
+
+        folders.forEach((folder, index) => {
+            folder.onclick = function () {
+                if (folder.nextElementSibling.style.display != 'none') { //por que o próximo irmão do <a> é uma <ul> sempre!!
+                    folder.nextElementSibling.style.display = 'none'
+                }
+
+                else if (folder.nextElementSibling.style.display == 'none') {
+                    folder.nextElementSibling.style.display = ''
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

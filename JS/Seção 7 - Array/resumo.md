@@ -1,17 +1,17 @@
-1) forEach:
+## 1) forEach:
 
     -Apenas percorre o array e executa uma função (callback) para cada elemento dele
     -Não retorna um novo array, não retorna nada, apenas executa a função
     -O map é melhor pois ele já retorna o array novo, aqui eu teria q fazer manualmente!!
 
-2) Map:
+## 2) Map:
 
     -percorre o array, executando uma callback para cada elemento dele
     -retorna um array novo com os valores novos retonados pela callback para cada elemento
     -NÃO MUDA O ORIGINAL ARRAY!
     -Posso encadear vários maps em que cada um utiliza o array resultante do anterior e no fim tem-se um array resultantede todos os maps
 
-3) Filter:
+## 3) Filter:
 
     -forma de filtrar os elementos do array a partir de uma callback que retorna 'true' ou 'false'
     -se for true: o eleme entra no retornado pela filter, se for false, não entra no array novo da filter
@@ -20,14 +20,21 @@
     -UTIL PARA PERCORRER ATRIBUTOS DE OBJETOS QUE ESTÃO NO ARRAY E SELECIONAR DE ACORDO COM O FILTRO!!
     -Posso encadear também!!
 
-4) Reduce: (o retorno e sempre passado para a proóxima callback como parâmetro == acumulador)
+## 4) Reduce: (o retorno e sempre passado para a proóxima callback como parâmetro == acumulador)
 
     - uma forma de reduzir um array a um número, somando os elementos por exemplo
     - Ela tem um acumulador que é o retorno da callback anterior, então se eu não incrementar ele vai fixar em um elemento até mudar!
     - se eu não setar um valor inicial para o acumulador, ele começa com o [0] e percorre o array do índice [1]!
 
+## 5) find: 
 
-IMPERATIVO VS. DECLARATIVO
+    -semelhante à *filter*, mas retorna apenas o primeiro elemento que achar que satisfaz a condição. Ela é bem útil nos momentos em que os casos são únicos, como busca por usernames, CEP's
+
+## 6) arr.join('elem que vai separar arr[x] de arr[x+1]')
+
+    - Concatena todos os elementos de um array!
+
+## IMPERATIVO VS. DECLARATIVO
 
 Imperativo: ele mostra o passo a passo e como é feito, sem muitos recursos que já fazem por você aquilo, porém o código é menos reaproveitado do que o declarativo.
 Declarativo: preocpa-se com o que deve ser feito e não o como, pois o passo a passo não e visto, pois usamos funções e elementos que fazem para nós

@@ -42,3 +42,22 @@ OBS: se o file não existir ele gera um!!
 [ex:] CONVERTER OS DADOS PARA JSON POIS É A FORMA PRINCIPAL DE PASSAR DADOS. STRINGS TBM MAS JSON SÃO STRINGS MAIS COMPLEXAS EM NOTAÇÃO DE OBJETO ENTÃO É MAIS UTIL PQ É SÓ DA UM PARSE E PODERÁ USAR NO SCRIPT!
 
 [OBS:] MESMO TENDO UM *ARRAY DE OBJETOS* SE EU DER UM *JSON.STRINGFY* ELE CONSEGUE converter todos os objetos do array E ME PERMITE MANDAR E USAR!!
+
+
+# fs-extra --> SUPORT PARA PROMISSESSSS POSSO USAR O THEN AO INVÉS DE UMA CALLBACK!
+
+**const fs = require('fs-extra')**
+
+# Movendo e/ou Renomeando Arquivos
+
+- Usa-se a função **rename(oldpath, newpath, callback(err))**
+
+-> Se eu quiser *apenas mover*: eu troco o path mas mantenho o nome do file target
+-> Se eu quiser *apenas renomear*: eu deixo o path mas troco o nome do file target
+-> Se eu quiser *fazer ambos*: eu troco o path e troco o nome do file target
+-> eu posso mudar a extensão usando split('.') e trocar o file[1]
+
+# Deletando Arquivos
+
+- Usa-se a função **unlink(path, callback(err))**
+ 

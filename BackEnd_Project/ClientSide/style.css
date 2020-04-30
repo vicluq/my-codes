@@ -5,6 +5,18 @@
     background-color: rgb(64, 95, 116);
 }
 
+#loadingGif {
+    background: transparent;
+    border-radius: 100px;
+    margin: auto;
+    align-content: center;
+    align-self: center;
+    position: absolute;
+    width: auto;
+    top: 250px;
+    left: 42%;
+}
+
 #h1 {
     text-align: center;
     font-size: 48px;
@@ -43,6 +55,7 @@
     background-color: rgb(214, 136, 108);
     transition: ease;
     transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 #regForm {
@@ -86,6 +99,13 @@
     height: 40px;
 }
 
+.formsBut:hover {
+    background-color: rgb(190, 185, 185);
+    cursor: pointer;
+    transition: ease;
+    transition-duration: 0.3s;
+}
+
 #voltarButtom {
     border-radius: 3px;
     border-style: solid;
@@ -101,6 +121,13 @@
     background-color: coral;
     position: relative;
     width: 100px;
+}
+
+#voltarButtom:hover {
+    background-color: rgb(214, 136, 108);
+    cursor: pointer;
+    transition: ease;
+    transition-duration: 0.3s;
 }
 
 #logForm {
@@ -131,3 +158,27 @@
     border-style: hidden;
     font-family: sans-serif;
 }
+
+#respDiv {
+    background-color: #fb3b3b78;
+    width: 200px;
+    position: relative;
+    max-width: 200px;
+    margin: auto;
+    bottom: 60px;
+    border-radius: 2px;
+    height: 50px;
+    text-align: center;
+}
+
+#loginResp {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: aliceblue;
+
+}
+

@@ -5,5 +5,6 @@ const cep = fetch('https://viacep.com.br/ws/01001000/json/', { //faria a funçã
     method: "GET"
 }).then((resp) => resp.json()).then((jsonResp) => jsonResp)
 
-cep.then((resp) => console.log(resp)) // o then serve para aguardar a resposta que cep receberá!
+cep.then((resp) => console.table(resp)) // o then serve para aguardar a resposta que cep receberá!
+
 

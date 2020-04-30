@@ -4,14 +4,14 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 
 
-const app = express();
+const app = express(); // função express instancia um objeto que vai ser nosso app e teremos acesso a seus métodos!
 app.use(cors());
 app.use(bodyParser()); //usado para fazer o parse do body do post e fazer o servidor ler o objeto json!!
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.listen(8080, () => {
-  console.log("my first server");
+  console.log("server running"); //a callback é executada se houve conexão com a porta
 });
 
 
@@ -69,7 +69,7 @@ app.post("/register", (req, res) => {
             
             const result = Object.assign(req.body, resCEP)
             console.log(result)
-            users.push(req.body);
+            users.push(result);
             
             
         }
@@ -85,11 +85,8 @@ app.post("/register", (req, res) => {
   }
 });
 
+
 //LOGIN PART
-
-
-
-
 
 app.post("/login", (req, res) => {
   
@@ -97,12 +94,15 @@ app.post("/login", (req, res) => {
   
   if (array[0] != undefined) {
         res.status(200)
+        res.json({
+          message:'success'
+      })
         console.log(array)
   
   } else {
         res.status(422)
         res.json({
-            message:'invalid cpf of user ame'
+            message:'invalid cpf of user name'
         })
     }
 });
