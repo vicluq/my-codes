@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Pixel";
+  src: url("../fonts/Pixel.ttf");
+}
+
+body {
+  background-color: #333;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #fff;
+}
+
+[wm-flappy] {
+  box-sizing: border-box;
+  background-color: rgb(50, 192, 240);
+  height: 800px;
+  width: 1200px;
+  border: 4px solid greenyellow;
+  position: relative;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#scoreBoard {
+  align-self: flex-start;
+  flex-basis: 40px;
+  text-align: center;
+  z-index: 1;
+  margin: 10px 0 0 10px;
+}
+
+#score {
+  font-family: "Pixel";
+  font-size: 44px;
+  margin: 0;
+}
+
+#bird {
+  position: absolute;
+  left: 200px;
+  z-index: 0;
+}
+
+.canos {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 0;
+}
+
+/* Cano 1 */
+#canos1 {
+  left: 550px;
+}
+
+/* Cano 2 */
+#canos2 {
+  left: 800px;
+}
+*/ #canos2 .cano1 {
+  height: 380px;
+}
+
+#canos2 .cano2 {
+  height: 300px;
+}
+
+/* Cano 3 */
+#canos3 {
+  left: 1100px;
+}
+
+#canos3 .cano1 {
+  height: 250px;
+}
+
+#canos3 .cano2 {
+  height: 350px;
+}
+
+/* Cano 4 */
+#canos4 {
+  left: 1300px;
+}
+
+#canos4 .cano1 {
+  height: 250px;
+}
+
+#canos4 .cano2 {
+  height: 400px;
+}
+
+.cano1 {
+  height: 250px;
+  width: 100%;
+  border: 3px solid black;
+  border-top: none;
+  background-image: linear-gradient(120deg, #5ce444 0%, #39cf4d 100%);
+}
+
+.cano2 {
+  height: 350px;
+  width: 100%;
+  border: 3px solid black;
+  border-bottom: none;
+  background-image: linear-gradient(120deg, #5ce444 0%, #39cf4d 100%);
+}
+
+#losing {
+  display: none;
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  background-color: yellowgreen;
+  color: black;
+  font-family: "Pixel";
+  font-size: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+}
+
+#restartbut {
+  width: 150px;
+  height: 60px;
+  margin-top: 20px;
+  color: #212121;
+  font-size: 38px;
+  background-color: #ffe500;
+  border: 4px solid black;
+  border-radius: 5px;
+  font-family: 'Pixel';
+  box-shadow: 2px 2px 2px 2px #00000021;
+}
+
+#restartbut:hover {
+  background-color: #ffe600d3;
+  box-shadow: 0 0 0 0 transparent;
+  cursor: pointer;
+}

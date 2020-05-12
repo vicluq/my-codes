@@ -1,0 +1,166 @@
+<h1>Welcome to our string class!</h1>
+
+<video id="videoAula" controlsList="nodownload" width="800px" height="500px" oncontextmenu="return false">
+    <source src="stringPointer.mp4" type="video/mp4">
+</video>
+
+<div id="progressBar">
+    <div id="bar"></div>
+</div>
+
+<div id="controlers">
+    <img src="https://img.icons8.com/ios/50/000000/circled-play.png" id="playbut" onclick="play()">
+    <img src="https://img.icons8.com/ios/50/000000/circled-pause.png" id="pausebut" onclick="pause()">
+    <img src="https://img.icons8.com/ios/50/000000/room-sound.png" id="somAu" onclick="raiseSound()">
+    <img src="https://img.icons8.com/ios/50/000000/sound-speaker.png" id="somBai" onclick="lowerSound()">
+    <div id="soundBar"></div>
+</div>
+
+<script>
+
+    const vid = document.getElementById('videoAula');
+    const progressBar = document.getElementById('bar');
+
+    //progress bar creation
+    setInterval(() => {
+
+        if (!vid.paused) {
+            progressBar.style.backgroundImage = 'linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)';
+            progressBar.style.width = (vid.currentTime) * (800 / vid.duration); //para ele poder chgar até 800 de width, pq se não a width = duration em segundos!
+        }
+    }, 1000)
+
+    //pause & play button
+
+    function play() {
+        console.log('vid.paused :>> ', vid.paused);
+        vid.play();
+    }
+
+    function pause() {
+        console.log('vid.paused :>> ', vid.paused);
+        vid.pause();
+    }
+    
+    //soundBar and controlers
+    const soundbar = document.getElementById('soundBar');
+    soundbar.style.width = vid.volume*145;
+
+
+    function raiseSound() {
+        vid.volume += 0.1
+        soundbar.style.width = vid.volume*145;
+        console.log('vid.volume :>> ', vid.volume);
+    }
+
+    function lowerSound() {
+        vid.volume -= 0.1
+        soundbar.style.width = vid.volume*145;
+        console.log('vid.volume :>> ', vid.volume);
+    }
+
+
+</script>
+
+<!-- STYLING -->
+
+<style>
+    #progressBar {
+        height: 15px;
+        width: 800px;
+        position: relative;
+        bottom: 23px;
+        border: 1px solid black;        
+    }
+
+    #bar {
+        height: 15px;
+        max-width: 800px;
+
+    }
+
+    #soundBar {
+        max-width: 145
+        px;
+        height: 10px;
+        background-color: aquamarine;
+        border-radius: 10px;
+        border: 0.5px solid black;
+    }
+
+    #controlers {
+        background-color: #9E9E9E;
+        border: 0.7px solid black;
+        border-radius: 10px;
+        width: 150px;
+    }
+
+    #somBai {
+        height: 30px;
+        width: 30px;
+        border: 1px;
+        border-radius: 100px;
+        position: relative;
+        top: 2px;
+    }
+
+    #somBai:hover {
+        background-color: #fdec1d;
+    }
+
+    #somBai:active {
+        background-color: #f0e78d;
+    }
+
+    #somAu {
+        height: 30px;
+        width: 30px;
+        border: 1px;
+        border-radius: 100px;
+        position: relative;
+        top: 2px;
+    }
+
+    #somAu:hover {
+        background-color: #fdec1d;
+    }
+
+    #somAu:active {
+        background-color: #f0e78d;
+    }
+
+    #playbut {
+        height: 30px;
+        width: 30px;
+        border: 1px;
+        border-radius: 100px;
+        position: relative;
+        top: 2px;
+    }
+
+    #playbut:hover {
+        background-color: #ff8a65;
+    }
+
+    #playbut:active {
+        background-color: #fa683b;;
+    }
+    
+    #pausebut {
+        height: 30px;
+        width: 30px;
+        border: 1px;
+        border-radius: 100px;
+        position: relative;
+        top: 2px;
+    }
+
+    #pausebut:hover {
+        background-color: #ff8a65;
+    }
+
+    #pausebut:active {
+        background-color: #fa683b;
+    }
+
+</style>

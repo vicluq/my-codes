@@ -1,0 +1,16 @@
+{
+  "name": "Fundamentos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serverForm.js",
+  "scripts": {
+    "test": "nodemon serverForm.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

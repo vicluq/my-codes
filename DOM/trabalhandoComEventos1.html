@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio" ontr>
+    <div>
+        <a href="#" onclick="printing()">Imprimir</a>
+    </div>
+    <script>
+
+        const body = document.querySelector('body')
+
+        function popUp(event) {
+            event.preventDefault()
+            if (window.confirm('Do you desire to continue?')) {
+                window.location.assign('./dom.html')
+            } else {
+                const p = document.createElement('p');
+                p.innerHTML = "Okay then! <i>you</i> chose to <b>stay</b>"
+                body.appendChild(p);
+            }
+        }
+
+        function printing() {
+            const password = window.prompt('Give he password to print', 'password');
+
+            if (password == '29112001') {
+                window.print()
+            } else {
+                const p = document.createElement('p');
+                p.innerHTML = "Sorry but you are not allowed to print this page!"
+                body.appendChild(p);
+            }
+        }
+
+    </script>
+</body>

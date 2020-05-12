@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body id="body" class="conteudo exercicio">
+    <h1>Formulário</h1>
+
+    <form name="pesquisa" action="http://www.bing.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+
+    <form action="none" name="alertar">
+        <label for="">Selecione uma Pessoa: </label>
+        <input type="radio" name="pessoa" value="Victoria" id="victoria">Victoria
+        <input type="radio" name="pessoa" value="Lucas" id="lucas">Lucas
+    </form>
+    <h2>Chosen person: <span id="person" style="color: aquamarine;"></span></h2>
+
+    <script>
+
+        const formAlertPessoas = document.alertar.pessoa
+        console.log(formAlertPessoas)
+
+        formAlertPessoas.forEach(input => {
+            input.onchange = function () {
+                document.getElementById('person').innerText = `${input.value}`
+                console.log('formAlertPessoas :>> ', document.alertar.pessoa.selectedIndex);
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

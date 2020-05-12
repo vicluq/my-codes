@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow</title>
+    <style>
+        .div1 {
+            font-size: 40px;
+            height: 200px;
+            width: 300px;
+            border: solid 3px;
+            overflow-y: scroll;
+            /* overflow-x: hidden; */
+        }
+        
+        .div1::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        .div1::-webkit-scrollbar-thumb {
+            background: lightblue;
+        }
+
+        .div1::-webkit-scrollbar-thumb:hover {
+            background: rgb(105, 174, 197);
+        }
+
+        .div1::-webkit-scrollbar-track {
+            background: rgba(137, 168, 179, 0.726);
+        }
+
+        p {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="div1">
+        TudoFuncionaMuitoBemEmCSS!!!
+        Texto muito grande para caber nessa div.
+        Já pensou qual será o comportamento padrão?
+    </div>
+
+  
+        <p>TESTING</p>
+   
+</body>
+</html>

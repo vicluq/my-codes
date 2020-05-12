@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+
+        body {
+            width: 100%;
+
+
+            display: grid;
+            grid-template-columns: repeat(3, 20%);
+            grid-template-columns: 20% 20% 20% 20%;
+            /* grid-template-columns: 2fr 2fr 2fr 2fr; */
+            grid-template-rows: 20% 20% 20%;
+
+
+            height: 100vh;
+            background-color: lightgray;
+        }
+
+        .d4 {
+            grid-column-start: 2;
+            grid-column-end: 5;
+        }
+
+        .d1 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        div {
+            text-align: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+    <div class="d5">5</div>
+    <div class="d6">6</div>
+    <div class="d7">7</div>
+    <div class="d8">8</div>
+    <div class="d9">9</div>
+    <div class="d10">10</div>
+    <div class="d11">11</div>
+    <div class="d12">12</div>
+</body>
+
+</html>

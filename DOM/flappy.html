@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/flappy.css">
+</head>
+
+<body class="conteudo">
+    <h1>Flappy Bird</h1>
+    
+    
+    <div wm-flappy>
+        <img id="bird" src="./imgs/passaro.png" height="40px" width="55px">
+        
+        <div id="scoreBoard">
+            <span style="font-size: 24px; color: black;">score:</span> 
+            <p id="score">0</p>
+        </div>
+        
+        <div WM-canos class="canos" id="canos1">
+            <div class="cano1"></div>
+            <div class="cano2"></div>
+        </div>
+        
+        <div WM-canos class="canos" id="canos2"">
+            <div class="cano1"></div>
+            <div class="cano2"></div>
+        </div>
+        
+        <div WM-canos class="canos" id="canos3">
+            <div class="cano1"></div>
+            <div class="cano2"></div>
+        </div>
+
+        <div WM-canos class="canos" id="canos4">
+            <div class="cano1"></div>
+            <div class="cano2"></div>
+        </div>
+        
+    </div>
+
+    <div id="losing">
+        You hit somewhere <br>
+        click to start over
+        <button id="restartbut" onclick="window.location.reload()">RESTART</button>
+    </div>
+    <script src="js/flappy.js"></script>
+</body>
+
+</html>

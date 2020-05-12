@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #04</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+
+        #limitTweet {
+            color: red;
+        }
+
+        #coord {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #candy {
+            height: 25px;
+            width: 25px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="tweet" action="https://twitter.com/intent/tweet" method="GET" target="_blank">
+        <textarea type="text" name="text" placeholder="tweet something..."></textarea>
+        <p char-count>280</p>
+        <!-- <select name="hl">
+                <option value="pt-br">Português (Brasil)</option>
+                <option value="en-us">Inglês (Americano)</option>
+            </select> -->
+        <button wm-submit>Tweet!</button>
+    </form>
+
+
+    <div id="coord">
+        <h1>Move Around to get the coord of the pointer</h1>
+        <div id="candy">candy</div>
+    </div>
+    <p id="xy"></p>
+
+    <script>
+
+        const charCount = document.querySelector('[char-count]')
+        const tweetArea = document.tweet.text
+
+        tweetArea.oninput = function () {
+            const tweet = tweetArea.value
+            const tweetSize = tweet.length
+            charCount.innerText = `${280 - tweetSize}`
+
+            if (Number(charCount.innerText) >= 0) {
+                charCount.style.color = "black";
+            }
+
+            else if (Number(charCount.innerText) < 0) {
+                charCount.style.color = "red";
+            }
+        }
+
+        const form = document.tweet;
+
+        form.onsubmit = function (event) {
+            event.preventDefault();
+
+            const form_data = new FormData(form);
+            form_data.append('id', '23h124ih5110vk')
+            
+            console.log(form_data.has('lang'))
+            console.log(form_data.get('text'))
+            console.log(form_data.get('id'))    
+        }
+
+        const coordDiv = document.querySelector('#coord');
+        const coordP = document.querySelector('#xy');
+
+        coordDiv.onmouseover = (event) => {
+            const coord = event.target.getBoundingClientRect();
+            console.log(event);
+            
+            coordP.innerText = `X: ${coord.x} || Y: ${coord.y}`
+
+        }
+
+    </script>
+</body>

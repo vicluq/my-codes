@@ -1,0 +1,64 @@
+<h1>This is my first actual working form</h1>
+
+<form method="POST"> 
+    
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" placeholder="username">
+    <br>
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="passw" placeholder="password">
+    <br>
+    <label for="email">E-mail: </label>
+    <input type="email" name="email" id="email" placeholder="email">
+    
+    <br>
+    <br>
+    <p>Select your country:</p>
+    <select name="country" id="country">       
+        <option value="USA">USA</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Germany">Germany</option>
+        <option value="Canada">Canada</option>
+    </select>
+    
+    <br>
+    <br>
+    <p>Select your game(s) preference(s):</p>
+    <select name="games" multiple size="4">       
+        <option value="GTA V">GTA V</option>
+        <option value="RDR2">Red Dead Red. 2</option>
+        <option value="FIFA 20">FIFA 20</option>
+        <option value="The Sims 4">The Sims 4</option>
+    </select>
+    
+    <br>
+    <br>
+    
+    <input type="radio" name="accplan" value="premium"> Premium
+    <input type="radio" name="accplan" value="basic plan"> Basic Plan
+    
+    <br>
+    <br>
+    
+    <button formaction="http://localhost:3003/users">Register</button>
+    <button formaction="http://localhost:3003/users/change">Change</button>
+
+</form>
+
+<style>
+    body{
+        width: 100%;
+        height: 100vh;
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        display:contents;
+    }
+
+    input {
+        margin-bottom: 15px;
+    }
+
+</style>

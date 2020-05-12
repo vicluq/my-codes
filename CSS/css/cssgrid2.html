@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #player {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+            font: 900;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            color: white;
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 100px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+
+<body style="width: 1920px; height: 1080px;">
+    <div id="player">player</div>
+
+    <script>
+        const [body] = document.getElementsByTagName('body')
+        const playerHTML = document.getElementById('player');
+
+        const player = {
+            positionY: 0, //top
+            positionX: 0, //left
+            velocity: 20, //20px aumentando 0.25px a cada um seg
+            gravity: 0.5,
+            move () { 
+                
+                if (this.positionX < 1920 && this.positionX < 1080){
+                this.velocity += this.gravity;
+
+                this.positionY += this.velocity; playerHTML.style.top = `${this.positionY}px`
+                this.positionX += this.velocity; playerHTML.style.left = `${this.positionX}px`
+
+                console.log(this.velocity, playerHTML.style.top, playerHTML.style.left)
+                }
+
+                else {
+                    clearInterval(loop)
+                }
+            }
+        }
+
+    let loop = setInterval(function() {player.move()}, 1000)
+        
+
+    </script>
+</body>
+
+</html>

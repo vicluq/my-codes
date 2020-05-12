@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial Narrow Bold', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            position: relative;
+            max-height: 110px;
+            border-bottom: 8px solid skyblue;
+            box-sizing: border-box;
+        }
+
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            left: 87%;
+            top: 40%;
+            height: 40px;
+            width: 60px;
+            background: #0dafe0;
+            border: 0px solid;
+        }
+
+        .menu-toggle i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .logo {
+            margin: 12px 0 0 10px;
+        }
+
+        .menu {
+            display: flex;
+            margin: 0;
+            position: relative;
+            left: 5%;
+            bottom: 30px;
+        }
+
+        .menu ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .menu a {
+            margin-right: 15px;
+            font-size: 22px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            padding: 30px 15px 40px 15px;
+            margin-right: 15px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .menu a:hover {
+            background-color: rgba(135, 207, 235, 0.596);
+            color: black;
+        }
+
+        .autenticacao {
+            display: flex;
+            position: relative;
+            bottom: 30px;
+            left: 30%;
+            min-width: 231px;
+        }
+
+        .autenticacao a {
+            display: inline-block;
+            font-size: 22px;
+            text-decoration: none;
+            color: white;
+            margin: 0 20px 0 0;
+            padding: 10px 15px;
+            background-color: #ff1137;
+            border-radius: 100px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .autenticacao a:hover {
+            background-color: #ff1139b7;
+        }
+
+        #register {
+            background-color: #a2e610;
+        }
+
+        #register:hover {
+            background-color: #a2e610bc;
+        }
+
+        @media (max-width: 1575px) {
+            .autenticacao {
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: inline-block;
+            }
+        }
+
+        #display {
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .curso {
+            height: 380px;
+            display: inline-block;
+            margin: 0 0 0 30px;
+            max-width: 300px;
+            padding: 20px 20px;
+            box-sizing: border-box;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px 4px #f443363b;
+        }
+
+        .curso-info {
+            max-height: 120px;
+            max-width: 250px;
+            overflow-y: hidden;
+        }
+
+        .curso-info h4 {
+            margin: 10px 0 10px 0;
+            max-width: 250px;
+            font-size: 20px;
+            overflow-y: hidden;
+            max-height: 80px;
+        }
+
+        .curso-info p {
+            font-style: italic;
+        }
+
+        .curso-preco {
+            position: relative;
+            text-align: right;
+            top: 30px;
+            width: 100%;
+        }
+
+        .curso-preco img {
+            position: absolute;
+            left: 5%;
+            height: 30px;
+            width: 30px;
+        }
+
+        .curso-preco img:hover {
+            background-color: #EF5350;
+            cursor: pointer;
+        }
+
+        .preco-de {
+            text-decoration: line-through;
+            font-size: 14px;
+            color: red;
+        }
+
+        .preco-por {
+            color: seagreen;
+            font-size: 20px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img height="80px" width="420px" src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio" linksNav tabindex="1" style="background-color: skyblue;">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos" tabindex="2" linksNav>Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre" tabindex="3" linksNav>Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato" tabindex="4" linksNav>Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login" tabindex="5">Login
+            </a><a href="#registar" tabindex="6" id="register">Registrar</a>
+        </aside>
+    </header>
+
+    <div id="display">
+        <div class="curso">
+            <img height="150px" width="250px" src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
+            <div class="curso-info">
+                <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
+                <p>Prof. Fulano</p>
+            </div>
+            <div class="curso-preco">
+                <img src="https://img.icons8.com/material/24/000000/bookmark-outline.png" /
+                    style="display: inline-block;">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+        <div class="curso">
+            <img height="150px" width="250px" src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
+            <div class="curso-info">
+                <h4>Web Moderno com Javascript + Projetos</h4>
+                <p>Prof. Sicrano Filho</p>
+            </div>
+            <div class="curso-preco">
+                <img src="https://img.icons8.com/material/24/000000/bookmark-outline.png" /
+                    style="display: inline-block;">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const links = document.querySelectorAll('[linksNav]');
+
+        window.onhashchange = function () {
+
+            links.forEach((link) => {
+                link.style.backgroundColor = 'transparent';
+                if (location.hash == link.href.substring(42)) {
+                    link.style.backgroundColor = 'skyblue';
+                }
+
+                console.log('hash: ', location.hash, 'href: ', link.href.substring(42))
+            })
+        }
+
+    </script>
+</body>
+
+</html>

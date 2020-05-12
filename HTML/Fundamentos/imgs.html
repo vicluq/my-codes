@@ -1,0 +1,55 @@
+<div class="slideshow" style="width: 1400; height: 400; margin: 0;">
+    <p id="img1" slideChallenges style="height: 400px; width: 500px; position: absolute; display: none;">
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="pedras" title="mar e pedras" width="500px"
+            height="400px" slideChallenge>
+    </p>
+
+    <p id="img2" slideChallenges style="height: 400px; width: 500px; margin: 0; position: absolute; display: none;">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="vista rio" title="vista rio" width="500px"
+            height="400px" slideChallenge>
+    </p>
+
+    <p id="img3" slideChallenges style="height: 400px; width: 500px; margin: 0; position: absolute; display: none;">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/45/04/da/por-do-sol-na-vista-linda.jpg"
+            alt="por do sol" title="por do sol" width="500px" height="400px" slideChallenge>
+    </p>
+</div>
+
+
+
+<script>
+
+    const imgs = Array.from(document.querySelectorAll('[slideChallenges]'));
+    console.log(imgs)
+    
+    setTimeout(images(imgs), 4000)
+      
+    function images (img) {
+        img.forEach((imgs) => {
+            move(imgs, 0, 1400)
+            
+        })
+    }
+
+    function move(img, inicio, fim) {
+        img.style.display = ""
+        
+        let ini = inicio;
+      const mover = setInterval(() => {
+            
+            if(ini < fim) {
+            ini+=10
+            img.style.left = `${ini}px`
+            console.log(ini)
+            }
+            else {
+                img.style.left = '0'
+                img.style.display = "none"
+                clearInterval(mover);
+                console.log('end')
+            }
+
+        }, 28)
+    }
+
+</script>

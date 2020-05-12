@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container  {
+            border: 4px solid aquamarine;
+            /* margin: 5px; */
+            /* box-sizing: border-box; */
+        }
+
+        .tag {
+            border: 4px solid aqua;
+            background-color: violet;
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            width: 600px;
+            display: flex;
+
+        }
+
+        .tag {
+            text-align: center;
+            flex-basis: 100px;
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(3) {
+            flex-grow: 2;
+            flex-shrink: 2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container nolabel">
+        <div class="tag">1</div>
+        <div class="tag">2</div>
+        <div class="tag">3</div>
+        <div class="tag">4</div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

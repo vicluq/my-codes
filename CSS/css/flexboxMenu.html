@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Oswald', sans-serif;
+            background-color: #3a4c50;
+        }
+
+        hr {
+            width: 40%;
+            /* border-color: skyblue; */
+            border: 1px solid skyblue;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #f3eeee08;
+        }
+
+        .cabecalho {
+            position: sticky;
+            top: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #333;
+            color: #fff;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+        }
+
+        .logo {
+            align-self: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+            padding: 10px 15px;
+        }
+
+        .menu a:hover {
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        .cabecalho .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin-right: 10px;
+        }
+
+        .autenticacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px 0 0;
+        }
+
+        .destaque {
+            background: #f50a31;
+            color: #fff;
+        }
+
+        .curso {
+            height: 380px;
+            display: inline-block;
+            margin: 0 0 0 30px;
+            max-width: 300px;
+            padding: 20px 20px;
+            box-sizing: border-box;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px 4px #66aecf57;
+        }
+
+        .curso-info {
+            max-height: 120px;
+            max-width: 250px;
+            overflow-y: hidden;
+        }
+
+        .curso-info h4 {
+            margin: 10px 0 10px 0;
+            max-width: 250px;
+            font-size: 20px;
+            overflow-y: hidden;
+            max-height: 80px;
+        }
+
+        .curso-info p {
+            font-style: italic;
+        }
+
+        .curso-preco {
+            position: relative;
+            text-align: right;
+            top: 30px;
+            width: 100%;
+        }
+
+        .curso-preco img {
+            position: absolute;
+            left: 5%;
+            height: 30px;
+            width: 30px;
+        }
+
+        .curso-preco img:hover {
+            background-color: #EF5350;
+            cursor: pointer;
+        }
+
+        .preco-de {
+            text-decoration: line-through;
+            font-size: 14px;
+            color: red;
+        }
+
+        .preco-por {
+            color: seagreen;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        main {
+            box-sizing: border-box;
+            width: auto;
+            height: auto;
+            margin: 10px 20px 0 20px;
+            display: flex;
+            flex-flow: row;
+        }
+
+        main #blog {
+            flex-basis: 75%;
+            flex-grow: 1;
+            display: flex;
+            padding: 0px 10px 0 0;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+
+        main #blog h1 {
+            align-self: center;
+            text-align: center;
+            box-sizing: border-box;
+            width: 30%;
+            word-spacing: 2px;
+            font-size: 40px;
+            color: skyblue;
+            margin: 20px 0 30px 0;
+            padding: 5px;
+            border: 2px dashed white;
+        }
+
+        main #blog article {
+            margin: 10px 0;
+            padding: 0px 10px;
+            background-color: aliceblue;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px rgba(122, 217, 241, 0.233);
+        }
+
+        #stuff {
+            flex-grow: 1;
+        }
+
+        #stuff section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #stuff section .curso {
+            margin: 20px 0 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+    <main>
+        <div id="blog">
+            <hr>
+            <article>
+                <p><b><mark>O que é Web:</mark></b>
+
+                    Web é uma palavra inglesa que significa teia ou rede. O significado de web ganhou outro sentido com
+                    o aparecimento da internet. A web passou a designar a rede que conecta computadores por todo mundo,
+                    a World Wide Web (WWW). Web pode ser uma teia de aranha ou um tecido e também se utiliza para
+                    designar uma trama ou intriga.
+
+                    A web significa um sistema de informações ligadas através de hipermídia (hiperligações em forma de
+                    texto, vídeo, som e outras animações digitais) que permitem ao usuário acessar uma infinidade de
+                    conteúdos através da internet. Para tal é necessário ligação à internet e um navegador (browser)
+                    onde são visualizados os conteúdos disponíveis. São exemplos de navegadores: Google Chrome, Safari,
+                    Mozilla Firefox, Internet Explorer, Opera, etc.</p>
+            </article>
+            <hr>
+            <article>
+                <p><b><mark>Como criar Conteúdo Web de qualidade?</mark></b>
+                    Muitos clientes nos perguntam sobre qual conteúdo devem colocar em suas lojas virtuais. A grande
+                    maioria torce o nariz quando falamos que devem criar um blog em seu site. Muita gente ainda acha que
+                    Blog é algo que contem a opinião particular de uma pessoa e que é apenas um hobby.
+
+                    Mas isso está muito fora da realidade. Um blog é uma sua sessão de notícias focada em assuntos que
+                    sejam de interesse de seus visitantes, ou seja, de assuntos vinculados aos seus produtos ou
+                    serviços.
+
+                    Um exemplo prático é uma loja virtual de roupas íntimas pode ter em seu site, onde em seu blog
+                    publique-se artigos com dicas sobre sedução ou sobre como se prevenir de doenças sexualmente
+                    transmissíveis.
+
+                    Se quiser saber mais sobre esse assunto veja minha outras dicas de como criar conteúdo web de
+                    qualidade para seu negócio na internet.</p>
+            </article>
+            <h1>Postagens mais Recentes...</h1>
+        </div>
+        <aside id="stuff">
+            <section>
+                <div class="curso">
+                    <img height="150px" width="250px" src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
+                    <div class="curso-info">
+                        <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
+                        <p>Prof. Fulano</p>
+                    </div>
+                    <div class="curso-preco">
+                        <img src="https://img.icons8.com/material/24/000000/bookmark-outline.png" /
+                            style="display: inline-block;">
+                        <span class="preco-de">R$80,00</span>
+                        <span class="preco-por">R$50,00</span>
+                    </div>
+                </div>
+                <div class="curso">
+                    <img height="150px" width="250px" src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
+                    <div class="curso-info">
+                        <h4>Web Moderno com Javascript + Projetos</h4>
+                        <p>Prof. Sicrano Filho</p>
+                    </div>
+                    <div class="curso-preco">
+                        <img src="https://img.icons8.com/material/24/000000/bookmark-outline.png" /
+                            style="display: inline-block;">
+                        <span class="preco-de">R$80,00</span>
+                        <span class="preco-por">R$50,00</span>
+                    </div>
+                </div>
+            </section>
+
+        </aside>
+    </main>
+</body>
+
+</html>

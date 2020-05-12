@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #01</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        header {
+            box-sizing: border-box;
+            flex-basis: 80px;
+            max-height: 80px;
+            background-color: rgb(255, 251, 0);
+            display: flex;
+        }
+
+        header ul, nav {
+            flex-grow: 1;
+            display: flex;
+            list-style: none;
+        }
+
+        header li {
+            margin: 0 10px;
+            align-self: center;
+            padding: 5px;
+            background-color: darkviolet;
+
+        }
+
+        main {
+            flex-grow: 1;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        main div {
+            background-color: rgb(255, 0, 128);
+            box-sizing: border-box;
+            flex-basis: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main div article {
+            width: inherit;
+            box-sizing: border-box;
+            margin: 20px 20px;
+            font-size: 40px;
+            flex-grow: 1;
+            height: 150px;
+            background-color: deepskyblue;
+        }
+
+        main aside {
+            flex-grow: 1;
+            background-color: yellowgreen;
+            font-size: 40px;
+        }
+
+        footer {
+            box-sizing: border-box;
+            flex-basis: 40px;
+            max-height: 40px;
+            background-color: rgba(255, 157, 0, 0.849);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://cdn.icon-icons.com/icons2/1875/PNG/512/web_120072.png" height="100%" width="80px"/>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>JavaScript</li>
+                <li>HTML 5</li>
+                <li>CSS 3</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="blog">
+            <article>
+                artigo 1
+            </article>
+            <article>
+                artigo 2
+            </article>
+            <article>
+                artigo 3
+            </article>
+        </div>
+        <aside id="features">
+            features
+        </aside>                
+    </main>
+    <footer>
+       <p>blog concept model created by Victoria Luquet</p> 
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a id="link" class="linkA" href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    
+    <label for="OS">Choose an Operating System: </label>
+    <select name="OS" id="OS">
+        <option value="MacOS">MacOS</option>
+        <option value="Windows">Windows</option>
+        <option value="Linux">Linux</option>
+    </select>
+
+    <script>
+        const a = document.querySelector('a')
+        console.log('a.href :>> ', a.href);
+        console.log('a.getAttribute href :>> ', a.getAttribute('href'));
+
+        const select = document.querySelector('#OS');
+        select.onchange = function () {
+            // const options = [...select] ou transf em Array ou faço como embaixo
+            alert(`You have selected ${select[select.selectedIndex].value}`)
+        }
+
+
+    </script>
+</body>
+</html>
