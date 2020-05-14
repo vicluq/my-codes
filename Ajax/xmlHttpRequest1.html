@@ -10,7 +10,60 @@
 <body class="conteudo exercicio">
     <h1>Estados</h1>
 
+    <section class="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Sigla</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </section>
     <script>
-        // ...
+
+        function makeXMLAjax(opt) {
+
+            const xml = new XMLHttpRequest
+            xml.open(opt.method, opt.URL, true)
+
+            xml.onload = function (event) {
+                if (xml.status === 200) {
+                    createTable(JSON.parse(xml.response))
+                }
+                else if (xml.response >= 400) {
+                    console.log('something went wrong with the request', xml.response)
+                }
+            }
+
+            xml.send()
+        }
+
+        makeXMLAjax({ method: 'GET', URL: './dados/estados.json' })
+
+        function createTable(states) {
+            const tableBody = document.querySelector('table tbody')
+
+            states.forEach(state => {
+                const newTableRow = document.createElement('tr');
+                const id = document.createElement('td')
+                const nome = document.createElement('td')
+                const sigla = document.createElement('td')
+
+                id.innerText = `${state.id}`
+                nome.innerText = `${state.nome}`
+                nome.classList.add('state')
+                sigla.innerText = `${state.sigla}`
+
+                newTableRow.appendChild(id); newTableRow.appendChild(nome); newTableRow.appendChild(sigla);
+                tableBody.appendChild(newTableRow);
+            });
+        }
+
     </script>
 </body>

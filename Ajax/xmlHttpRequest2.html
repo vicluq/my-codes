@@ -6,6 +6,11 @@
     <title>XMLHttpRequest #02</title>
     <link rel='stylesheet' href='css/estilo.css'>
     <style>
+        #progress {
+            width: 0px;
+            height: 30px;
+            background-color: aquamarine;
+        }
         input[type=file] {
             display: flex;
             margin: 10px;
@@ -18,10 +23,47 @@
 </head>
 
 <body class="conteudo exercicio">
-    <input type="file" name="arquivo" />
-    <div class="progresso"></div>
+    <form id="uploadForm" action="http://localhost:3003/file/upload" enctype="multipart/form-data" method="post">
+        <input type="file" id="fileInput" name="myfile"/>
+        <button>send</button>
+    </form>
+    <div id="progress"></div>
+    
 
     <script>
-        // ...
+        
+        function uploadRequest (config) {
+            const xml = new XMLHttpRequest;
+            
+            xml.upload.onprogress = function (event) {
+                const percentual = (event.loaded/event.total)*100
+                progressBar(percentual)
+            }
+
+            xml.open('POST', config.URL, true)
+            xml.send(config.file)
+        }
+
+        function progressBar (percentual) {
+            const progressdiv = document.getElementById('progress');
+
+            progressdiv.style.width = percentual
+            progressdiv.innerText = `${percentual}`
+        }
+
+        const input = document.getElementById('fileInput')
+        
+        input.oninput = function (event) {
+            const formFile = new FormData()
+            formFile.append(input.name, input.files[0]);
+            console.log(formFile)
+
+            uploadRequest({
+                URL: 'http://localhost:3003/file/upload',
+                file: formFile,
+            })    
+            
+        }
+
     </script>
 </body>

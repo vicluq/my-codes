@@ -10,10 +10,57 @@
 
 <body class="conteudo exercicio">
     <h1>Axios Get/Post</h1>
-    <div id="get"></div>
-    <div id="post"></div>
+    
+    <div id="get">
+        <h2>Par Ou Ímpar</h2>
+        <input type="number" name="num" id="num" placeholder="escola o numero...">
+        <button onclick="parOuImparGET(document.querySelector('#num').value)">Par ou Impar?</button>
+        <p id="getResp"></p>
+    </div>
+
+    <div id="post">
+        <h2>Olha o que você colocou:</h2>
+        <form name="myform">
+            <input type="text" name="nome" placeholder="nome...">
+            <input type="color" name="color">
+            <input type="date" name="date">
+            <button>Submit</button>
+        </form>
+        <p id="postResp"></p>
+    </div>
 
     <script>
-        // ...
+
+        //GET --> axios.get() caso fosse require
+        
+        function parOuImparGET (num) {
+            const url = `http://localhost:3003/ImpOuPar/?num=${num}`
+            const options = {
+                method: 'GET',
+            }
+
+            axios(url, options).then(res => { document.querySelector('#getResp').innerHTML = res.data }).catch(err => { console.log(err) })
+        }
+
+        //POST --> axios.post() caso fosse require
+        const my_form = document.querySelector('form')
+        my_form.onsubmit = olhaIssoPOST
+        
+        function olhaIssoPOST(event) {
+            event.preventDefault()
+            const formData = new FormData(my_form)
+
+            const url = `http://localhost:3003/axiosPOST`
+            const data = 
+                {
+                nome: formData.get('nome'),
+                color: formData.get('color'),
+                date: formData.get('date'),
+                }
+            
+
+            axios.post(url, data).then(res => { document.querySelector('#postResp').innerHTML = JSON.stringify(res.data) }).catch(err => { console.log(err) })
+        }
+
     </script>
 </body>

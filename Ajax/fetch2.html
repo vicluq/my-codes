@@ -7,8 +7,10 @@
     <link rel='stylesheet' href='css/estilo.css'>
     <style>
         form {
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            max-width: 300px;
         }
 
         form input,
@@ -17,18 +19,130 @@
             margin: 10px;
             font-size: 1.6em;
         }
+
+        .interesses {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttons input {
+            flex-basis: 100px;
+        }
+
+        .buttons button {
+            flex-basis: 100px;
+            background-color: yellowgreen;
+            border: 2px solid white;
+            box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.144);
+        }
     </style>
 </head>
 
 <body class="conteudo exercicio">
     <h1>Formulário Via Fetch</h1>
-    <form name="usuarioForm" action="formulario" method="post">
-        <input type="text" name="nome" placeholder="Nome..." />
-        <input type="text" name="sobrenome" placeholder="Sobrenome..." />
-        <button>Salvar</button>
+    <form name="usuarioForm" action="" method="post">
+        <input type="text" name="username" required autocomplete="name" minlength="4" placeholder="Username..." />
+        <input type="email" name="email" autocomplete="email" required placeholder="E-mail..." />
+        <input type="password" name="password" required autocomplete="current-password" minlength="6"
+            placeholder="Senha..." />
+        <label for="cor">Qual sua cor favorita?</label>
+        <input type="color" name="favColor" id="cor">
+
+        <label for="interesses">Quais são seus interesses?</label>
+        <div class="interesses">
+            <input type="checkbox" name="interesses" id="interesses1" value="jogos"> jogos
+            <input type="checkbox" name="interesses" id="interesses2" value="Filmes"> Filmes
+            <input type="checkbox" name="interesses" id="interesses3" value="Livros"> Livros
+            <input type="checkbox" name="interesses" id="interesses4" value="Esportes"> Esportes
+            <input type="checkbox" name="interesses" id="interesses5" value="Estudar"> Estudar
+            <input type="checkbox" name="interesses" id="interesses6" value="Programação"> Programação
+        </div>
+        <div class="buttons">
+            <input type="reset" value="reset">
+            <button>Registrar</button>
+        </div>
     </form>
     <div id="resultado"></div>
+
     <script>
-        // ...
+
+        const resultdiv = document.getElementById('resultado')
+        const form = document.usuarioForm
+        form.onsubmit = fetchToServer
+
+        // get form data
+        function fetchToServer(event) {
+            event.preventDefault()
+
+            const myform = new FormData(form);
+            const email = myform.get('email')
+            const username = myform.get('username')
+
+            if (isValidEmail(email) && isValidUsername(username)) {
+                const body = {
+                    username: myform.get('username'),
+                    email: myform.get('email'),
+                    password: myform.get('password'),
+                    interesses: myform.getAll('interesses'),
+                    cor_favorita: myform.get('favColor')
+                }
+
+                fetchPOST(body);
+            }
+
+            else {
+                resultdiv.style.color = 'red';
+                resultdiv.innerHTML = `<b>Check your info and make sure that they are valid and if your email client is supported by us</b>`
+            }
+
+        }
+
+        // actual fetch
+        function fetchPOST(body) {
+
+            const url = "http://localhost:3003/user"
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            }
+
+            fetch(url, options).then(res => { console.log(res); giveResponse(res) }).catch(err => { console.log(err) })
+        }
+
+        function giveResponse({ ok }) {
+            if (ok) {
+                resultdiv.style.color = 'green';
+                resultdiv.innerHTML = `<b>You have successfully registered</b>`
+            } else {
+                resultdiv.style.color = 'red';
+                resultdiv.innerHTML = `<b>Check your info and make sure that they are valid and if your email client is supported by us</b>`
+            }
+        }
+
+        // validations
+        function isValidEmail(email) {
+            if (email.includes('@gmail.com') || email.includes('@outlook.com') || email.includes('@yahoo.com')) {
+                return true
+            } else { return false }
+        }
+
+        function isValidUsername(username) {
+            if (username.includes('-') || username.includes('#') || username.includes('-') || username.includes(' ')) {
+                return false
+            } else { return true }
+        }
+
+
     </script>
 </body>

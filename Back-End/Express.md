@@ -87,6 +87,10 @@
 - permitir que outros endereços acessem o nosso server e façam fecth de requests POST, GET, DELETE e etc ao nosso server!
 <hr>
 
-## express.static('path')
+## express.static('pathDaPasta') ou server.use('ajax', express.static('.'))--> criando meu próprio HTTP-SERVER
 
-- Essa middleware (função) do express **permite que o servidor sirva arquivos estáticos (js, html, imagens) se uma pasta**. Eu forneço a pasta atrvés do seu path no parâmetro do middlware static
+- Essa middleware (função) do express **permite que o servidor sirva arquivos estáticos (js, html, imagens) se uma pasta**. Eu forneço a pasta atrvés do seu path no parâmetro do middlware static.
+
+- Quando eu abrir o server, ele vai está servindo e **procura por padrão direto o index.html**
+
+> **http://localhost:3004/ajax.html** ==> ele abrirá nessa rota o arquivo se existir, pois está servindo aquela pasta e seus arquivos

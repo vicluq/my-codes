@@ -10,10 +10,66 @@
 
 <body class="conteudo exercicio">
     <h1>jQuery Get/Post</h1>
-    <div id="get"></div>
-    <div id="post"></div>
+    <div id="get">
+        <h2>Par Ou Ímpar</h2>
+        <input type="text" name="num" id="num" placeholder="escolha o numero...">
+        <button onclick="GETdislay(event)">Par ou Impar?</button>
+        <p id="getResp"></p>
+    </div>
+
+    <div id="post">
+        <h2>Olha o que você colocou:</h2>
+        <form name="myform">
+            <input type="text" name="nome" placeholder="nome...">
+            <input type="color" name="color">
+            <input type="date" name="date">
+            <button>Submit</button>
+        </form>
+        <p id="postResp"></p>
+    </div>
 
     <script>
-        // ...
+
+        function GETdislay(event) {
+
+            const num = document.querySelector('#num').value
+
+            $.ajax({
+                method: 'GET',
+                url: `http://localhost:3003/ImpOuPar/?num=${num}`,
+                success(data) {
+                    console.log(data);
+                    document.getElementById('getResp').innerHTML = data
+                },
+                error(error) {
+                    document.getElementById('getResp').innerHTML = JSON.stringify(error)
+                    console.log(error);
+                }
+            })
+        }
+
+        const form = document.querySelector('form')
+        form.onsubmit = (event) => {
+            
+            event.preventDefault()
+            const formData = new FormData(form)
+
+            const data = {
+                nome: formData.get('nome'),
+                color: formData.get('color'),
+                date: formData.get('date')
+            }
+
+            $.ajax({
+                method: 'POST',
+                url: `http://localhost:3003/axiosPOST`,
+                data: data,
+                success (data) {
+                    console.log(data);
+                    document.getElementById('postResp').innerHTML = JSON.stringify(data)
+                }
+            })
+        }
+
     </script>
 </body>

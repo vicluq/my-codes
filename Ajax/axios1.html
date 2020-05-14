@@ -6,12 +6,64 @@
     <title>Axios #01</title>
     <link rel='stylesheet' href='css/estilo.css'>
     <script src="js/axios.js"></script>
+    <style>
+    	body {
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+
+    	}
+
+    	div {
+    		padding: 0;
+    		margin: 0;
+    		width: 1000px;
+    		max-height: 300px;
+    		display: flex;
+    		flex-flow: column wrap;
+    	}
+
+    	li {
+    		margin: 0 10px;
+    	}
+
+    	li span {
+    		color: yellowgreen;
+    		text-decoration: underline;
+    	}
+
+    </style>
 </head>
 
 <body class="conteudo exercicio">
     <h1>Estados</h1>
+    <div id="estadosDisplay"></div>
 
     <script>
-        // ...
+
+    	const options = {
+    		method: 'GET',
+    	}
+
+        axios('./dados/estados.json', options).then(res => {createList(res)}).catch(err => {console.log(err)})
+
+        function createList ({data}) {
+        	const states = data;
+
+        	const ul = document.getElementById('estadosDisplay'); 
+
+        	states.forEach(state => {
+        		const id = state.id
+        		const nome = state.nome
+        		const sigla = state.sigla
+
+        		const li = document.createElement('li');
+        		li.innerHTML = `<span>${id}</span>: ${nome} - ${sigla}`
+        		li.style.listStyle = 'none'
+
+        		ul.appendChild(li)
+        	})
+        }
+
     </script>
 </body>

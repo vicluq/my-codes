@@ -11,6 +11,40 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        
+        function ajaxRequest (opt) {
+            const xml = new XMLHttpRequest;
+            
+            xml.open('GET', opt.URL, true)
+            
+            xml.onreadystatechange = function (event) {
+                if(xml.readyState === 4) {
+                    if (xml.status === 200) {
+                        buildList(xml.responseXML)
+                    }
+                }
+            }
+
+            xml.send()
+        }
+
+        ajaxRequest({
+            URL: './dados/estados.xml',
+        })
+
+        function buildList (estados) {
+            const states = estados.querySelectorAll('estado') //xml é estilo html e retorna uma mini-dom
+            console.log(states);
+            
+            const ul = document.createElement('ul');
+            
+            states.forEach(state => {
+                const newLI = document.createElement('li');
+                newLI.innerHTML = `${state.id} | ${state.attributes.nome.value} | ${state.attributes.sigla.value}`
+                ul.appendChild(newLI);
+            });
+            document.querySelector('body').appendChild(ul)
+        }
+
     </script>
 </body>

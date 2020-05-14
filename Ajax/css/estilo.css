@@ -18,12 +18,48 @@ body {
     height: 100%;
 }
 
+.tabela {
+    height: 700px;
+    overflow-y: scroll;
+    background-color: none;
+}
+
+.tabela::-webkit-scrollbar {
+    height: 40px;
+    width: 10px;
+}
+
+.tabela::-webkit-scrollbar-thumb {
+    background: yellowgreen;
+    border-radius: 10px;
+}
+
+.tabela::-webkit-scrollbar-thumb:hover {
+    background: rgb(166, 230, 40);
+    width: 20px;
+    border-radius: 10px;
+}
+
+.tabela::-webkit-scrollbar-track {
+    background: rgb(121, 133, 96);
+    border-radius: 10px;
+}
+
 table {
     border-collapse: collapse;
+    text-align: center;
 }
 
 tr {
     border-bottom: solid 1px white;
+}
+
+table tbody .state {
+    color: yellowgreen;
+}
+
+th {
+    font-size: 30px;
 }
 
 td {
@@ -42,7 +78,7 @@ li {
     min-height: 100%;
 }
 
-.exercicio div {
+/* .exercicio div {
     font-size: 3em;
     border: solid 5px #fff;
     padding: 20px 40px;
@@ -69,4 +105,4 @@ li {
     border: solid 10px greenyellow;
     color: greenyellow;
     font-weight: bold;
-}
+} */
