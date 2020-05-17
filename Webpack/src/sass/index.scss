@@ -1,0 +1,18 @@
+@import "./index.css";
+$main-title-color: #f49090;
+
+body {
+  background-color: #333333;
+
+  .main-h1 {
+    color: $main-title-color;
+  }
+
+  button {
+    width: 100px;
+    height: 35px;
+    background-color: yellowgreen;
+    color: white;
+    font-weight: 600;
+  }
+}
