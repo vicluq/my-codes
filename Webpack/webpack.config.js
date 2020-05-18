@@ -5,15 +5,17 @@ const uglifyJS = require("uglifyjs-webpack-plugin");
 const optimizeCSS = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  entry: "./src/app.js",
+  mode: "production",
+  entry: {
+    main: "./src/app.js",
+  },
   output: {
     filename: "bundle.js",
-    path: "C:\\Users\\Victo\\OneDrive\\Documentos\\WebCurso\\wbepack_\\Build",
+    path: "C:\\Users\\Victo\\OneDrive\\Documentos\\WebCurso\\Webpack\\Build",
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "index.css",
+      filename: "css/index.min.css",
     }),
 
     new HtmlWebpackPlugin({
@@ -21,20 +23,21 @@ module.exports = {
       title: "WebPack Test",
       minify: true,
       template: "src/index.html",
+      inject: true,
     }),
 
-    new HtmlWebpackPlugin({
-      minify: true,
-      filename: "pages/ajax.html",
-      template: "src/pages/ajax.html",
-      inject: false,
-    }),
+    // new HtmlWebpackPlugin({
+    //   minify: true,
+    //   filename: "pages/ajax.html",
+    //   template: "src/pages/ajax.html",
+    //   inject: false,
+    // }),
 
-    new uglifyJS({
-      cache: true,
-      parallel: true,
-      extractComments: true,
-    }),
+    // new uglifyJS({
+    //   cache: true,
+    //   parallel: true,
+    //   extractComments: true,
+    // }),
 
     new optimizeCSS({
       assetNameRegExp: /\.css$/g,
@@ -53,29 +56,36 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
 
-      //   {
-      //     test: /\.html$/,
-      //     use: [
-      //       "file-loader?name=[name].[ext]",
-      //       "extract-loader",
-      //       {
-      //         loader: "html-loader",
-      //         options: {
-      //           minimize: true,
-      //         },
-      //       },
-      //     ],
-      //   },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+      },
+
+      {
+        test: /\.html$/,
+        use: [
+          "file-loader?name=[name].[ext]",
+          "extract-loader",
+          {
+            loader: "html-loader",
+            options: {
+              minimize: true,
+            },
+          },
+        ],
+      },
     ],
   },
   devServer: {
     port: 8081,
     contentBase:
-      "C:\\Users\\Victo\\OneDrive\\Documentos\\WebCurso\\wbepack_\\Build",
+      "C:\\Users\\Victo\\OneDrive\\Documentos\\WebCurso\\Webpack\\Build",
     liveReload: true,
     open: true,
     onListening: (server) => {
       console.log("server is on");
     },
   },
+
+  watch: false,
 };

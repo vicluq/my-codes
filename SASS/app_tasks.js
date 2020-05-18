@@ -34,6 +34,7 @@ function JS(cb) {
   src("./src/scripts/*.js")
     .pipe(babel({ comments: false, presets: ["@babel/env"] }))
     .pipe(uglify())
+    .pipe(concat("index.min.js"))
     .pipe(dest("./Build/JavaScript"));
 
   return cb();

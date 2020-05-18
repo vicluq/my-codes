@@ -12,7 +12,7 @@ function watchFiles(cb) {
     }
   );
 
-  watch("./src/app/**/*.html", parallel(minify_html)).on("change", (event) => {
+  watch("./src/app/**/*.html", series(minify_html)).on("change", (event) => {
     console.log(`file ${event} was changed`);
   });
 
@@ -32,7 +32,7 @@ function watchFiles(cb) {
 //   );
 // }
 
-exports.default = series(watchFiles, web_server);
+exports.default = series(watchFiles);
 
 // OUTRA OPÇÃO
 

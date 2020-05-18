@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Dev Course</title>
+    <title>WebDev Course</title>
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -13,32 +13,21 @@
     <header>
         <h1 id="main-title">Web Dev Course</h1>
         <nav id="getAccess">
-            <button link="./pages/homePage.html" class="navBut" id="homeBut">Home</button>
-            <button link="./pages/HTML.html" class="navBut" locked id="htmlbut">HTML</button>
-            <button link="./pages/CSS.html" class="navBut" locked id="cssbut">CSS</button>
-            <button link="./pages/JS.html" class="navBut" locked id="jsbut">JavaScript</button>
-            <button link="./pages/Gulp.html" class="navBut" locked id="gulpbut">Gulp</button>
+            <button link="pages/homepage.html" dest='home' class="navBut" id="homeBut">Home</button>
+            <button link="pages/HTML.html" dest='html' class="navBut" locked id="htmlbut">HTML</button>
+            <button link="pages/CSS.html" dest='css' class="navBut" locked id="cssbut">CSS</button>
+            <button link="pages/JS.html" dest='js' class="navBut" locked id="jsbut">JavaScript</button>
+            <button link="pages/Gulp.html" dest='gulp' class="navBut" locked id="gulpbut">Gulp</button>
         </nav>
     </header>
 
     <main id="ajax-main">
-        <!-- Add via javascript so it won't appear on inspect element -->
-        <!-- <div id="navigation">
-            <ul id="nav-list">
-                <li class="navButtons" link="./javascript.html">JavaScript</li>
-                <li class="navButtons" link="./html_lessons.html">HTML</li>
-                <li class="navButtons" link="./cssAndSass.html">CSS</li>
-                <li class="navButtons" link="./DOM.html">DOM</li>
-                <li class="navButtons" link="./Ajax.html">Ajax</li>
-                <li class="navButtons" link="./Gulp.html">Gulp</li>
-            </ul>
-        </div> -->
     </main>
     <footer>
         <p>powered by: Luquet & ECMA2020</p>
     </footer>
-    <script src="./JavaScript/index.js"></script>
-    <script src="./JavaScript/navigate.js"></script>
+    <script src="./JavaScript/index.min.js"></script>
+    <!-- <script src="./JavaScript/navigate.js"></script> -->
 </body>
 
 </html>
