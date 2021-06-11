@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+        }
+
+        main {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        @keyframes rotate {
+            10% {
+                transform: perspective(1000px) rotateY(10deg) rotateX(10deg);
+            }
+
+            20% {
+                transform: perspective(1000px) rotateY(20deg) rotateX(10deg)
+            }
+
+            30% {
+                transform: perspective(1000px) rotateY(30deg) rotateX(10deg)
+            }
+
+            40% {
+                transform: perspective(1000px) rotateY(40deg) rotateX(10deg)
+            }
+
+            50% {
+                transform: perspective(1000px) rotateY(50deg) rotateX(10deg)
+            }
+
+            60% {
+                transform: perspective(1000px) rotateY(60deg) rotateX(10deg)
+            }
+
+            70% {
+                transform: perspective(1000px) rotateY(70deg) rotateX(10deg)
+            }
+
+            80% {
+                transform: perspective(1000px) rotateY(80deg) rotateX(10deg)
+            }
+
+            90% {
+                transform: perspective(1000px) rotateY(90deg) rotateX(10deg)
+            }
+
+            100% {
+                transform: perspective(1000px) rotateY(100deg) rotateX(10deg);
+            }
+        }
+
+        .rotate {
+            box-sizing: border-box;
+            top: 40vh;
+            left: 40vw;
+            position: fixed;
+            height: 200px;
+            width: 200px;
+            background-color: darkcyan;
+            border: 5px solid purple;
+            transform: translateY(-100vh);
+            transform-origin: top;
+            transition: transform 0.35s ease-out;
+            z-index: 400;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .backdrop {
+            position: fixed;
+            display: none;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 200;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .backdrop span {
+            width: 40px;
+            height: 40px;
+            font-size: 44px;
+            position: fixed;
+            top: 20px;
+            left: calc(100% - 50px);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .backdrop span:hover {
+            color: white;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .comeback {
+            transform: translateY(0);
+            animation: rotate 5s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Using Transform Property</h1>
+    <button>Bring Me back</button>
+    <p contenteditable="true">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus
+        facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores quo at voluptatibus facilis rem repellendus
+        quam nemo doloribus delectus, explicabo atque culpa ad dicta mollitia aliquid suscipit iste provident sit.</p>
+    <div id="square" class="rotate">
+        SQUARE
+    </div>
+    <div class="backdrop">
+        <span onclick="removeBackDropAndSquare()">x</span>
+    </div>
+    <script>
+        document.querySelector('button').onclick = function () {
+            document.querySelector('#square').classList.toggle('comeback')
+            document.querySelector('.backdrop').classList.toggle('show')
+        }
+
+        function removeBackDropAndSquare() {
+            document.querySelector('#square').classList.remove('comeback')
+            document.querySelector('.backdrop').classList.remove('show')
+        }
+    </script>
+</body>
+
+</html>

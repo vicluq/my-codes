@@ -9,14 +9,14 @@
         html {
             height: 100%;
         }
-        
+
         body {
             margin: 0;
             font-family: 'Oswald', sans-serif;
             background-color: lightgray;
             height: 100%;
         }
-        
+
         .conteudo {
             display: flex;
             flex-direction: column;
@@ -24,51 +24,61 @@
             justify-content: center;
             min-height: 100%;
         }
-        
+
         .menu-principal {
             min-width: 400px;
             text-align: center;
-            max-height: 800px;
+            max-height: 700px;
             scroll-behavior: auto;
-            overflow-y: scroll;
-            
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 10% 90%;
+
         }
 
-        .menu-principal::-webkit-scrollbar {
+        ::-webkit-scrollbar {
             width: 10px;
         }
 
-        .menu-principal::-webkit-scrollbar-thumb {
+        ::-webkit-scrollbar-thumb {
             background: skyblue;
             height: 20px;
         }
 
-        .menu-principal::-webkit-scrollbar-track {
-            background:darkslategray;
+        ::-webkit-scrollbar-track {
+            background: darkslategray;
         }
-        
+
+
         .menu-principal h1 {
             background: #333;
             color: #fff;
             border-bottom: solid 5px #4faddb;
             padding: 15px 0px;
             margin: 0;
+            grid-column-start: 1;
+            grid-column-end: 3;
         }
-        
+
         .menu-principal nav {
-            display: block;
-            background-color: #fff;
+            display: flex;
+            flex-direction: column;
             min-width: 198px;
+            height: 100%;
+            overflow-y: scroll;
+
         }
-        
+
         .menu-principal a {
             display: block;
             padding: 10px 0px;
+            background-color: #fff;
+
             text-decoration: none;
             color: #222;
             font-size: 1.2em;
         }
-        
+
         .menu-principal a:hover {
             background-color: rgba(79, 173, 219, .4);
         }
@@ -78,12 +88,8 @@
 <body>
     <div class="conteudo">
         <div class="menu-principal">
-            <h1>Exercícios de CSS</h1>
+            <h1>CSS 3</h1>
             <nav>
-                <a href="./intro.html">CSS Intro</a>
-                <a href="./anatomia.html">Anatomia CSS</a>
-                <a href="./origem.html">Origem</a>
-                <a href="./classeTag.html">Criando Classe <strong>.tag</strong></a>
                 <a href="./seletores.html">Seletores</a>
                 <a href="./especificidade1.html">Especificidade CSS #01</a>
                 <a href="./especificidade2.html">Especificidade CSS #02</a>
@@ -94,21 +100,17 @@
                 <a href="./alturaLargura.html">Altura & Largura</a>
                 <a href="./tamanhoBox.html">Box Sizing</a>
                 <a href="./overflow.html">Overflow</a>
-                <a href="./float.html">Float</a>
-            </nav>
-            <nav>
+                <a href="./form.html">Form</a>
                 <a href="./cores.html">Cores</a>
                 <a href="./unidades1.html">Unidades #01</a>
                 <a href="./unidades2.html">Unidades #02</a>
                 <a href="./texto.html">Texto</a>
                 <a href="./position.html">Position</a>
+                <a href="./transform.html">Transform</a>
                 <a href="./mediaQuery.html">Media Query</a>
-                <a href="./desafioMenu.html">Desafio Menu</a>
-                <a href="./desafioCard.html">Desafio Card</a>
                 <a href="./flexbox1.html">Flex Box #1</a>
                 <a href="./flexbox2.html">Flex Box #2</a>
                 <a href="./flexbox3.html">Flex Box #3</a>
-                <a href="./flexboxMenu.html">Desafio Menu (Flex Box)</a>
                 <a href="./cssgrid1.html">CSS Grid #1</a>
                 <a href="./cssgrid2.html">CSS Grid #2</a>
                 <a href="./cssgrid3.html">CSS Grid #3</a>

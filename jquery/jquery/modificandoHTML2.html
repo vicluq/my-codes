@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #02</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='div3'>3</div>
+    <p class='numero'>4</p>
+    <p class='numero'>5</p>
+
+    <script>
+        //React Like Append ==> append and array of mapped elements
+
+        function MovieCard(props) {
+            return $('<li>').addClass('MovieCard')
+                .append(`<h3>${props.title}</h3>`)
+                .append(`<p>${props.genre}</p>`)
+                .append(`<p>duration: ${props.duration}min</p>`);
+        }
+
+        const movies = {
+            1: {
+                title: 'Star Wars',
+                genre: 'SciFi',
+                duration: 142,
+            },
+
+            2: {
+                title: 'Avengers',
+                genre: 'Action/SciFi',
+                duration: 180,
+            }
+        } //[ { }, { } ]
+
+        const movieList = Object.values(movies).map(movie => MovieCard(movie));
+        $('#div2').append(movieList);
+
+        $('#div3').replaceWith('<p>I have Replaced Div 3</p>')
+    </script>
+</body>

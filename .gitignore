@@ -1,4 +1,7 @@
 node_modules
 p5.js
 package-lock.json
-Node/Projetos/node_modules
+node_modules
+build
+public
+dist

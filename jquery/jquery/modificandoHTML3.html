@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #03</h1>
+    <div id='conteudo'></div>
+
+    <script>
+        const pessoas = [
+            { nome: 'Ana', nota: 9.1 },
+            { nome: 'Bianca', nota: 8.4 },
+            { nome: 'Carlos', nota: 7.6 },
+            { nome: 'Julia', nota: 9.7 }
+        ]
+
+        function createDataRow({ nome, nota }) {
+            return $('<tr>').append(`<td>${nome}</td>`).append(`<td>${nota}</td>`).css('display', 'none').show(3000);
+        }
+
+        const tableDiv = $('#conteudo');
+        const table = $('<table id="student-grade">');
+
+        table.append('<tr><th>name</th><th>grade</th></tr>');
+        table.append(pessoas.map(pessoa => createDataRow(pessoa)));
+
+        tableDiv.append(table);
+
+    </script>
+</body>

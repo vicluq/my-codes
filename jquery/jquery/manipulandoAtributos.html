@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Manipulando Atributos</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        [wm-relogio] {
+            text-align: center;
+        }
+
+        [wm-relogio] button {
+            font-size: 1.6em;
+            padding: 0px 25px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Manipulando Atributos</h1>
+    <div wm-relogio='10'></div>
+    <button onclick="startTimer()">Restart</button>
+
+    <script>
+        const clock = $('[wm-relogio]');
+        const originalSecs = Number.parseInt(clock.attr('wm-relogio'));
+
+        function startTimer() {
+            const timeout = setInterval(() => {
+                const secs = Number.parseInt(clock.attr('wm-relogio'));
+                if (secs >= 0) {
+                    clock.html(`<p>${secs}</p>`);
+                    clock.attr('wm-relogio', secs - 1);
+                }
+                else {
+                    clearTimer(timeout)
+                    clock.html("Time's Up! 😉")
+                }
+            }, 1000)
+        }
+
+        function clearTimer(timeout) {
+            clearInterval(timeout);
+            clock.attr('wm-relogio', originalSecs);
+        }
+
+        $(startTimer);
+        // $(document).ready(startTimer);
+
+    </script>
+</body>

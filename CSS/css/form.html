@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        form {
+            background-color: gainsboro;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        body>h1,
+        body>h3 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> Working with forms </h1>
+    <h3>Forms have action, fildsets (element group with same name), each vahe a legend, and the inputs</h3>
+    <form method="POST" action="http://localhost:3003/user">
+        <h1> Register </h1>
+        <input type="text" minlength="4" name="username" placeholder="username..." required />
+        <input type="email" name="email" placeholder="email..." required />
+        <input type="password" minlength="6" name="password" placeholder="password..." required />
+        <fieldset>
+            <legend>Select your interests</legend>
+            <input type="checkbox" name="interests" value="sports"> Sports
+            <input type="checkbox" name="interests" value="games"> Games
+            <input type="checkbox" name="interests" value="programming"> Programming
+            <input type="checkbox" name="interests" value="art"> Art
+        </fieldset>
+        <button type="submit">Register</button>
+    </form>
+</body>
+
+</html>

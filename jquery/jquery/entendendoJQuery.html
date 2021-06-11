@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div class="queryDiv">1</div>
+    <div class="queryDiv">2</div>
+    <div>3</div>
+
+    <script>
+        $('div').hide(3000, () => {
+            console.log('Hidden');
+        })
+
+        $('div').addClass('niceDiv');
+
+        $('div').each((i, div) => {
+            console.log(div);
+        })
+
+
+
+        console.log($.parseHTML('<h2 class="subtitle">This is a to be parsed subtitle</h2>')[0]);
+    </script>
+</body>
